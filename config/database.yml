@@ -17,7 +17,9 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: db
+  host: db #Para quando for executar a aplicação no dockerc
+  #host:localhost #Para quando for executar as migrations
+  username: postgres
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
