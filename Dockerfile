@@ -31,4 +31,3 @@ RUN yarn install
 COPY . /usr/src/app
  
 EXPOSE 5000
-#CMD puma -C config/puma.rb

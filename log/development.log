@@ -2639,3 +2639,49 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 473ms (Views: 435.7ms | ActiveRecord: 0.8ms)
 
 
+Started GET "/" for 172.22.0.1 at 2018-05-27 23:34:59 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (35.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 30ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 172.22.0.1 at 2018-05-27 23:35:01 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (87.4ms)
+Started GET "/users/sign_in" for 172.22.0.1 at 2018-05-27 23:35:02 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 45513ms (Views: 45423.4ms | ActiveRecord: 57.3ms)
+
+
+Completed 200 OK in 44201ms (Views: 44199.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 172.22.0.1 at 2018-05-27 23:36:11 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dKqbyxplakJ62dQW1+y+4gmfBKLUPyyv9f0WP985wIQ2l2EWqYH42VVIQ156IVw9WUX3VI5Mdv/IKtxRH4J5NQ==", "user"=>{"email"=>"example@example.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (79.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "example@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (20.2ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", "2018-05-27 23:36:12.292052"], ["last_sign_in_at", "2018-05-27 21:26:10.536744"], ["sign_in_count", 3], ["updated_at", "2018-05-27 23:36:12.294211"], ["id", 1]]
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:5000/
+Completed 302 Found in 628ms (ActiveRecord: 103.9ms)
+
+
+Started GET "/" for 172.22.0.1 at 2018-05-27 23:36:12 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 449ms (Views: 409.1ms | ActiveRecord: 0.7ms)
+
+
