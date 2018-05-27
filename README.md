@@ -10,14 +10,14 @@ Fora acrescido ao projeto original o **Docker**
 
 ## Para criar os bancos de dados (development, test)
 
-`rails db:create DB_HOST=localhost`
+`rails db:create POSTGRES_HOST=localhost POSTGRES_USER=postgres`
 
 ## Para rodar as migrações do banco de dados (PostgreSQL)
 
-`rails db:migrate DB_HOST=localhost`
+`rails db:migrate POSTGRES_HOST=localhost POSTGRES_USER=postgres`
 
 ## Para adicionar os dados fakes (ver db/seeds.rb) ao banco de dados
 
-`rails ​db:​seed`
+`rails db:seed POSTGRES_HOST=localhost POSTGRES_USER=postgres`
 
 ***GOD** is good*

@@ -1845,3 +1845,549 @@ Processing by Api::V1::ReviewsController#index as */*
 Completed 200 OK in 124ms (Views: 0.2ms | ActiveRecord: 6.1ms)
 
 
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7704122458228562940)[0m
+  [1m[35m (23.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(7704122458228562940)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (35.1ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Ruby On Rails"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Talks"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Testes"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Outros"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (63.9ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[35m (1.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (4.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example@example.com"], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example2@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example3@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example4@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example5@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mCategory Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Ruby On Rails"], ["LIMIT", 1]]
+  [1m[36mMovie Create (12.3ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "thumbnail_key", "video_key", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Crie generators no Ruby On Rails"], ["description", "Generators são uma maneira de você automatizar a criação de conjuntos de arquivos no seu APP (assim como o rails new, o rails generate controller, o rails generate scaffold e etc), e nesse Screencast nós vamos aprender como cria-los.."], ["thumbnail_key", "generators.png"], ["video_key", "generators.mp4"], ["thumbnail_cover_key", "generators-cover.png"], ["created_at", "2018-05-27 19:15:27.673684"], ["updated_at", "2018-05-27 19:15:27.673684"]]
+  [1m[36mPgSearch::Document Load (20.8ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 14], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[36mPgSearch::Document Create (8.2ms)[0m  [1m[32mINSERT INTO "pg_search_documents" ("content", "searchable_type", "searchable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Crie generators no Ruby On Rails"], ["searchable_type", "Movie"], ["searchable_id", 14], ["created_at", "2018-05-27 19:15:27.749170"], ["updated_at", "2018-05-27 19:15:27.749170"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mCategory Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Ruby On Rails"], ["LIMIT", 1]]
+  [1m[36mMovie Create (0.9ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "thumbnail_key", "video_key", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Dominando o uso de Jobs no RoR - Parte 1"], ["description", "s Jobs são uma maneira fácil de você rodar processos demorados em background (evitando lentidão na hora de responder as requisições do usuário e tornando seu sistema mais fluido)."], ["thumbnail_key", "jobs1.png"], ["video_key", "jobs1.mp4"], ["thumbnail_cover_key", "jobs1-cover.png"], ["created_at", "2018-05-27 19:15:27.766762"], ["updated_at", "2018-05-27 19:15:27.766762"]]
+  [1m[36mPgSearch::Document Load (0.8ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 15], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[36mPgSearch::Document Create (0.9ms)[0m  [1m[32mINSERT INTO "pg_search_documents" ("content", "searchable_type", "searchable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Dominando o uso de Jobs no RoR - Parte 1"], ["searchable_type", "Movie"], ["searchable_id", 15], ["created_at", "2018-05-27 19:15:27.770841"], ["updated_at", "2018-05-27 19:15:27.770841"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mCategory Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Ruby On Rails"], ["LIMIT", 1]]
+  [1m[36mMovie Create (0.9ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "thumbnail_key", "video_key", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Dominando o uso de Jobs no RoR - Parte 2"], ["description", "s Jobs são uma maneira fácil de você rodar processos demorados em background (evitando lentidão na hora de responder as requisições do usuário e tornando seu sistema mais fluido)."], ["thumbnail_key", "jobs2.png"], ["video_key", "jobs2.mp4"], ["thumbnail_cover_key", "jobs2-cover.png"], ["created_at", "2018-05-27 19:15:27.779974"], ["updated_at", "2018-05-27 19:15:27.779974"]]
+  [1m[36mPgSearch::Document Load (0.8ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 16], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[36mPgSearch::Document Create (0.9ms)[0m  [1m[32mINSERT INTO "pg_search_documents" ("content", "searchable_type", "searchable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Dominando o uso de Jobs no RoR - Parte 2"], ["searchable_type", "Movie"], ["searchable_id", 16], ["created_at", "2018-05-27 19:15:27.783948"], ["updated_at", "2018-05-27 19:15:27.783948"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mCategory Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Ruby On Rails"], ["LIMIT", 1]]
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "thumbnail_key", "video_key", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Instalando pacotes no Rails com Yarn"], ["description", "O Yarn é um gerenciador de pacotes javascript rápido, seguro e confiável que foi integrado no rails >= 5.1 para facilitar ainda mais a gestão das dependências. (agora você usa o Bundler para bibliotecas ruby e o Yarn para bibliotecas javascript, simples assim)"], ["thumbnail_key", "materialize.png"], ["video_key", "materialize.mp4"], ["thumbnail_cover_key", "materialize-cover.png"], ["created_at", "2018-05-27 19:15:27.793307"], ["updated_at", "2018-05-27 19:15:27.793307"]]
+  [1m[36mPgSearch::Document Load (0.9ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 17], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[36mPgSearch::Document Create (1.1ms)[0m  [1m[32mINSERT INTO "pg_search_documents" ("content", "searchable_type", "searchable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Instalando pacotes no Rails com Yarn"], ["searchable_type", "Movie"], ["searchable_id", 17], ["created_at", "2018-05-27 19:15:27.797441"], ["updated_at", "2018-05-27 19:15:27.797441"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mCategory Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Outros"], ["LIMIT", 1]]
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "thumbnail_key", "video_key", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Como monitorar seu APP em produção"], ["description", "Hoje vamos falar de um tema muito interessante quando precisamos lidar com a verificação da saúde do nosso ambiente de produção: a instrumentação."], ["thumbnail_key", "obt18.png"], ["video_key", "obt18.mp4"], ["thumbnail_cover_key", "obt18-cover.png"], ["created_at", "2018-05-27 19:15:27.807397"], ["updated_at", "2018-05-27 19:15:27.807397"]]
+  [1m[36mPgSearch::Document Load (1.0ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 18], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[36mPgSearch::Document Create (1.0ms)[0m  [1m[32mINSERT INTO "pg_search_documents" ("content", "searchable_type", "searchable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Como monitorar seu APP em produção"], ["searchable_type", "Movie"], ["searchable_id", 18], ["created_at", "2018-05-27 19:15:27.811644"], ["updated_at", "2018-05-27 19:15:27.811644"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mCategory Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Outros"], ["LIMIT", 1]]
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "thumbnail_key", "video_key", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Desmistificando a Criação de APIs"], ["description", "Desmistificando a Criação de APIs Desmistificando a Criação de APIs Desmistificando a Criação de APIs Desmistificando a Criação de APIs"], ["thumbnail_key", "obt17.png"], ["video_key", "obt17.mp4"], ["thumbnail_cover_key", "obt17-cover.png"], ["created_at", "2018-05-27 19:15:27.820768"], ["updated_at", "2018-05-27 19:15:27.820768"]]
+  [1m[36mPgSearch::Document Load (0.9ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 19], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[36mPgSearch::Document Create (1.1ms)[0m  [1m[32mINSERT INTO "pg_search_documents" ("content", "searchable_type", "searchable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Desmistificando a Criação de APIs"], ["searchable_type", "Movie"], ["searchable_id", 19], ["created_at", "2018-05-27 19:15:27.824796"], ["updated_at", "2018-05-27 19:15:27.824796"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mCategory Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Outros"], ["LIMIT", 1]]
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "thumbnail_key", "video_key", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Dominando o Visual Studio Code - Parte 1"], ["description", "O Visual Studio Code é um editor de texto Open Source completo que possui integração nativa com o Git, milhares de extensões, é rápido e permite que você realize o debug facilmente do seu código."], ["thumbnail_key", "vscode1.png"], ["video_key", "vscode1.mp4"], ["thumbnail_cover_key", "vscode1-cover.png"], ["created_at", "2018-05-27 19:15:27.834233"], ["updated_at", "2018-05-27 19:15:27.834233"]]
+  [1m[36mPgSearch::Document Load (0.8ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 20], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[36mPgSearch::Document Create (1.0ms)[0m  [1m[32mINSERT INTO "pg_search_documents" ("content", "searchable_type", "searchable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Dominando o Visual Studio Code - Parte 1"], ["searchable_type", "Movie"], ["searchable_id", 20], ["created_at", "2018-05-27 19:15:27.838281"], ["updated_at", "2018-05-27 19:15:27.838281"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mCategory Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Outros"], ["LIMIT", 1]]
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "thumbnail_key", "video_key", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Dominando o Visual Studio Code - Parte 1"], ["description", "O Visual Studio Code é um editor de texto Open Source completo que possui integração nativa com o Git, milhares de extensões, é rápido e permite que você realize o debug facilmente do seu código."], ["thumbnail_key", "vscode2.png"], ["video_key", "vscode2.mp4"], ["thumbnail_cover_key", "vscode2-cover.png"], ["created_at", "2018-05-27 19:15:27.847523"], ["updated_at", "2018-05-27 19:15:27.847523"]]
+  [1m[36mPgSearch::Document Load (0.9ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 21], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[36mPgSearch::Document Create (1.0ms)[0m  [1m[32mINSERT INTO "pg_search_documents" ("content", "searchable_type", "searchable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Dominando o Visual Studio Code - Parte 1"], ["searchable_type", "Movie"], ["searchable_id", 21], ["created_at", "2018-05-27 19:15:27.851457"], ["updated_at", "2018-05-27 19:15:27.851457"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mCategory Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Outros"], ["LIMIT", 1]]
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "thumbnail_key", "video_key", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Dominando o Visual Studio Code - Parte 1"], ["description", "O Visual Studio Code é um editor de texto Open Source completo que possui integração nativa com o Git, milhares de extensões, é rápido e permite que você realize o debug facilmente do seu código."], ["thumbnail_key", "vscode3.png"], ["video_key", "vscode3.mp4"], ["thumbnail_cover_key", "vscode3-cover.png"], ["created_at", "2018-05-27 19:15:27.860415"], ["updated_at", "2018-05-27 19:15:27.860415"]]
+  [1m[36mPgSearch::Document Load (0.9ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 22], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[36mPgSearch::Document Create (1.0ms)[0m  [1m[32mINSERT INTO "pg_search_documents" ("content", "searchable_type", "searchable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Dominando o Visual Studio Code - Parte 1"], ["searchable_type", "Movie"], ["searchable_id", 22], ["created_at", "2018-05-27 19:15:27.864329"], ["updated_at", "2018-05-27 19:15:27.864329"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mCategory Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Outros"], ["LIMIT", 1]]
+  [1m[36mSerie Create (11.4ms)[0m  [1m[32mINSERT INTO "series" ("title", "description", "thumbnail_key", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Visual Studio Code"], ["description", "Uma série completa para você dominar um dos mais importantes editores de texto"], ["thumbnail_key", "vscode1.png"], ["thumbnail_cover_key", "vscode-serie-cover.png"], ["created_at", "2018-05-27 19:15:27.889397"], ["updated_at", "2018-05-27 19:15:27.889397"]]
+  [1m[36mPgSearch::Document Load (0.9ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 2], ["searchable_type", "Serie"], ["LIMIT", 1]]
+  [1m[36mPgSearch::Document Create (1.0ms)[0m  [1m[32mINSERT INTO "pg_search_documents" ("content", "searchable_type", "searchable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Visual Studio Code"], ["searchable_type", "Serie"], ["searchable_id", 2], ["created_at", "2018-05-27 19:15:27.905229"], ["updated_at", "2018-05-27 19:15:27.905229"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mMovie Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."episode_number" = $1 AND "movies"."serie_id" = $2 LIMIT $3[0m  [["episode_number", 1], ["serie_id", 2], ["LIMIT", 1]]
+  [1m[36mMovie Create (1.3ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "thumbnail_key", "video_key", "episode_number", "serie_id", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Dominando o Visual Studio Code - Parte 1"], ["description", "O Visual Studio Code é um editor de texto Open Source completo que possui integração nativa com o Git, milhares de extensões, é rápido e permite que você realize o debug facilmente do seu código."], ["thumbnail_key", "vscode1.png"], ["video_key", "vscode1.mp4"], ["episode_number", 1], ["serie_id", 2], ["thumbnail_cover_key", "vscode1-cover.png"], ["created_at", "2018-05-27 19:15:27.914185"], ["updated_at", "2018-05-27 19:15:27.914185"]]
+  [1m[36mPgSearch::Document Load (0.8ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 23], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mMovie Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."episode_number" = $1 AND "movies"."serie_id" = $2 LIMIT $3[0m  [["episode_number", 2], ["serie_id", 2], ["LIMIT", 1]]
+  [1m[36mMovie Create (1.3ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "thumbnail_key", "video_key", "episode_number", "serie_id", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Dominando o Visual Studio Code - Parte 2"], ["description", "O Visual Studio Code é um editor de texto Open Source completo que possui integração nativa com o Git, milhares de extensões, é rápido e permite que você realize o debug facilmente do seu código."], ["thumbnail_key", "vscode2.png"], ["video_key", "vscode2.mp4"], ["episode_number", 2], ["serie_id", 2], ["thumbnail_cover_key", "vscode2-cover.png"], ["created_at", "2018-05-27 19:15:27.924682"], ["updated_at", "2018-05-27 19:15:27.924682"]]
+  [1m[36mPgSearch::Document Load (0.8ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 24], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mMovie Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."episode_number" = $1 AND "movies"."serie_id" = $2 LIMIT $3[0m  [["episode_number", 3], ["serie_id", 2], ["LIMIT", 1]]
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "thumbnail_key", "video_key", "episode_number", "serie_id", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Dominando o Visual Studio Code - Parte 3"], ["description", "O Visual Studio Code é um editor de texto Open Source completo que possui integração nativa com o Git, milhares de extensões, é rápido e permite que você realize o debug facilmente do seu código."], ["thumbnail_key", "vscode3.png"], ["video_key", "vscode3.mp4"], ["episode_number", 3], ["serie_id", 2], ["thumbnail_cover_key", "vscode3-cover.png"], ["created_at", "2018-05-27 19:15:27.934728"], ["updated_at", "2018-05-27 19:15:27.934728"]]
+  [1m[36mPgSearch::Document Load (0.8ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 25], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example@example.com"], ["LIMIT", 1]]
+  [1m[36mPlayer Create (56.1ms)[0m  [1m[32mINSERT INTO "players" ("start_date", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["start_date", "2018-05-27 19:15:27.957905"], ["created_at", "2018-05-27 19:15:27.978041"], ["updated_at", "2018-05-27 19:15:27.978041"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example@example.com"], ["LIMIT", 1]]
+  [1m[36mPlayer Create (1.2ms)[0m  [1m[32mINSERT INTO "players" ("start_date", "movie_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["start_date", "2018-05-27 19:15:28.037569"], ["movie_id", 14], ["created_at", "2018-05-27 19:15:28.041738"], ["updated_at", "2018-05-27 19:15:28.041738"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example@example.com"], ["LIMIT", 1]]
+  [1m[36mPlayer Create (1.1ms)[0m  [1m[32mINSERT INTO "players" ("start_date", "movie_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["start_date", "2018-05-27 19:15:28.045785"], ["movie_id", 15], ["created_at", "2018-05-27 19:15:28.049528"], ["updated_at", "2018-05-27 19:15:28.049528"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example@example.com"], ["LIMIT", 1]]
+  [1m[36mPlayer Create (1.2ms)[0m  [1m[32mINSERT INTO "players" ("start_date", "movie_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["start_date", "2018-05-27 19:15:28.053496"], ["movie_id", 16], ["created_at", "2018-05-27 19:15:28.057110"], ["updated_at", "2018-05-27 19:15:28.057110"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example@example.com"], ["LIMIT", 1]]
+  [1m[36mPlayer Create (1.0ms)[0m  [1m[32mINSERT INTO "players" ("start_date", "movie_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["start_date", "2018-05-27 19:15:28.061242"], ["movie_id", 18], ["created_at", "2018-05-27 19:15:28.064885"], ["updated_at", "2018-05-27 19:15:28.064885"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReview Exists (41.1ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" IS NULL AND "reviews"."reviewable_type" = $1 AND "reviews"."reviewable_id" = $2 LIMIT $3[0m  [["reviewable_type", "Movie"], ["reviewable_id", 14], ["LIMIT", 1]]
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example@example.com"], ["LIMIT", 1]]
+  [1m[36mReview Create (2.5ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "description", "reviewable_type", "reviewable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["rating", 3], ["description", "I have always depended on the kindness of strangers."], ["reviewable_type", "Movie"], ["reviewable_id", 14], ["created_at", "2018-05-27 19:15:28.149291"], ["updated_at", "2018-05-27 19:15:28.149291"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReview Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" IS NULL AND "reviews"."reviewable_type" = $1 AND "reviews"."reviewable_id" = $2 LIMIT $3[0m  [["reviewable_type", "Movie"], ["reviewable_id", 14], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReview Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" IS NULL AND "reviews"."reviewable_type" = $1 AND "reviews"."reviewable_id" = $2 LIMIT $3[0m  [["reviewable_type", "Movie"], ["reviewable_id", 14], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReview Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" IS NULL AND "reviews"."reviewable_type" = $1 AND "reviews"."reviewable_id" = $2 LIMIT $3[0m  [["reviewable_type", "Movie"], ["reviewable_id", 14], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReview Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" IS NULL AND "reviews"."reviewable_type" = $1 AND "reviews"."reviewable_id" = $2 LIMIT $3[0m  [["reviewable_type", "Movie"], ["reviewable_id", 14], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mMovie Load (1.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFavorite Exists (17.4ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."user_id" IS NULL AND "favorites"."favoritable_type" = $1 AND "favorites"."favoritable_id" = $2 LIMIT $3[0m  [["favoritable_type", "Movie"], ["favoritable_id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example@example.com"], ["LIMIT", 1]]
+  [1m[36mFavorite Create (13.1ms)[0m  [1m[32mINSERT INTO "favorites" ("favoritable_type", "favoritable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["favoritable_type", "Movie"], ["favoritable_id", 1], ["created_at", "2018-05-27 19:15:28.237888"], ["updated_at", "2018-05-27 19:15:28.237888"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMovie Load (1.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFavorite Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."user_id" IS NULL AND "favorites"."favoritable_type" = $1 AND "favorites"."favoritable_id" = $2 LIMIT $3[0m  [["favoritable_type", "Movie"], ["favoritable_id", 2], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example@example.com"], ["LIMIT", 1]]
+  [1m[36mFavorite Create (1.0ms)[0m  [1m[32mINSERT INTO "favorites" ("favoritable_type", "favoritable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["favoritable_type", "Movie"], ["favoritable_id", 2], ["created_at", "2018-05-27 19:15:28.262335"], ["updated_at", "2018-05-27 19:15:28.262335"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMovie Load (1.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFavorite Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."user_id" IS NULL AND "favorites"."favoritable_type" = $1 AND "favorites"."favoritable_id" = $2 LIMIT $3[0m  [["favoritable_type", "Movie"], ["favoritable_id", 3], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example@example.com"], ["LIMIT", 1]]
+  [1m[36mFavorite Create (1.0ms)[0m  [1m[32mINSERT INTO "favorites" ("favoritable_type", "favoritable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["favoritable_type", "Movie"], ["favoritable_id", 3], ["created_at", "2018-05-27 19:15:28.272955"], ["updated_at", "2018-05-27 19:15:28.272955"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMovie Load (1.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFavorite Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."user_id" IS NULL AND "favorites"."favoritable_type" = $1 AND "favorites"."favoritable_id" = $2 LIMIT $3[0m  [["favoritable_type", "Movie"], ["favoritable_id", 4], ["LIMIT", 1]]
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example@example.com"], ["LIMIT", 1]]
+  [1m[36mFavorite Create (1.1ms)[0m  [1m[32mINSERT INTO "favorites" ("favoritable_type", "favoritable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["favoritable_type", "Movie"], ["favoritable_id", 4], ["created_at", "2018-05-27 19:15:28.284049"], ["updated_at", "2018-05-27 19:15:28.284049"]]
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMovie Load (1.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFavorite Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."user_id" IS NULL AND "favorites"."favoritable_type" = $1 AND "favorites"."favoritable_id" = $2 LIMIT $3[0m  [["favoritable_type", "Movie"], ["favoritable_id", 5], ["LIMIT", 1]]
+  [1m[36mUser Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example@example.com"], ["LIMIT", 1]]
+  [1m[36mFavorite Create (1.2ms)[0m  [1m[32mINSERT INTO "favorites" ("favoritable_type", "favoritable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["favoritable_type", "Movie"], ["favoritable_id", 5], ["created_at", "2018-05-27 19:15:28.301805"], ["updated_at", "2018-05-27 19:15:28.301805"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 172.22.0.1 at 2018-05-27 19:16:06 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 91ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 172.22.0.1 at 2018-05-27 19:16:08 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (242.8ms)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /usr/src/app/public/packs
+Completed 200 OK in 80470ms (Views: 80439.9ms | ActiveRecord: 4.3ms)
+
+
+  [1m[35m (382.9ms)[0m  [1m[35mCREATE DATABASE "onebitflix_development" ENCODING = 'unicode'[0m
+  [1m[35m (391.8ms)[0m  [1m[35mCREATE DATABASE "onebitflix_test" ENCODING = 'unicode'[0m
+  [1m[35m (12.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7704122458228562940)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20180526134807)
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (26.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (16.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180526134807"]]
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePgSearchDocuments (20180526140759)
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.7ms)[0m  [1m[35mCREATE TABLE "pg_search_documents" ("id" bigserial primary key, "content" text, "searchable_type" character varying, "searchable_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE  INDEX  "index_pg_search_documents_on_searchable_type_and_searchable_id" ON "pg_search_documents"  ("searchable_type", "searchable_id")[0m
+  [1m[35m (54.0ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS pg_trgm;[0m
+  [1m[35m (18.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS fuzzystrmatch;[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180526140759"]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCategories (20180526235715)
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180526235715"]]
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateReviews (20180526235904)
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (17.9ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "rating" integer, "description" text, "reviewable_type" character varying, "reviewable_id" bigint, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_74a66bd6c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_reviewable_type_and_reviewable_id" ON "reviews"  ("reviewable_type", "reviewable_id")[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_user_id" ON "reviews"  ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180526235904"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateFavorites (20180526235937)
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE "favorites" ("id" bigserial primary key, "favoritable_type" character varying, "favoritable_id" bigint, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_d15744e438"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE  INDEX  "index_favorites_on_favoritable_type_and_favoritable_id" ON "favorites"  ("favoritable_type", "favoritable_id")[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE  INDEX  "index_favorites_on_user_id" ON "favorites"  ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180526235937"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSeries (20180527000054)
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE "series" ("id" bigserial primary key, "highlighted" boolean DEFAULT FALSE, "title" character varying, "description" text, "thumbnail_key" character varying, "category_id" bigint, "featured_thumbnail_key" character varying, "thumbnail_cover_key" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_d50a220694"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+)[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE  INDEX  "index_series_on_category_id" ON "series"  ("category_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180527000054"]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateMovies (20180527000205)
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE TABLE "movies" ("id" bigserial primary key, "highlighted" boolean DEFAULT FALSE, "title" character varying, "description" text, "thumbnail_key" character varying, "video_key" character varying, "episode_number" integer, "featured_thumbnail_key" character varying, "serie_id" bigint, "category_id" bigint, "thumbnail_cover_key" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_e4e11f2bc6"
+FOREIGN KEY ("serie_id")
+  REFERENCES "series" ("id")
+, CONSTRAINT "fk_rails_cbeec57254"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+)[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE  INDEX  "index_movies_on_serie_id" ON "movies"  ("serie_id")[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE  INDEX  "index_movies_on_category_id" ON "movies"  ("category_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180527000205"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePlayers (20180527000300)
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE "players" ("id" bigserial primary key, "start_date" timestamp, "end_date" timestamp, "elapsed_time" time, "movie_id" bigint, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_9832e2bac2"
+FOREIGN KEY ("movie_id")
+  REFERENCES "movies" ("id")
+, CONSTRAINT "fk_rails_224cac07ce"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE  INDEX  "index_players_on_movie_id" ON "players"  ("movie_id")[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE  INDEX  "index_players_on_user_id" ON "players"  ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180527000300"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddLastWatchedEpisodeToSeries (20180527000335)
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "series" ADD "last_watched_episode_id" bigint[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE  INDEX  "index_series_on_last_watched_episode_id" ON "series"  ("last_watched_episode_id")[0m
+  [1m[35m (3.1ms)[0m  [1m[35mALTER TABLE "series" ADD CONSTRAINT "fk_rails_a4c673e5cf"
+FOREIGN KEY ("last_watched_episode_id")
+  REFERENCES "movies" ("id")
+[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180527000335"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (19.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-27 20:01:13.630589"], ["updated_at", "2018-05-27 20:01:13.630589"]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(7704122458228562940)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Ruby On Rails"], ["LIMIT", 1]]
+  [1m[36mCategory Create (1.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Ruby On Rails"], ["created_at", "2018-05-27 20:01:29.983986"], ["updated_at", "2018-05-27 20:01:29.983986"]]
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Talks"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.8ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Talks"], ["created_at", "2018-05-27 20:01:29.996214"], ["updated_at", "2018-05-27 20:01:29.996214"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Testes"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.8ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Testes"], ["created_at", "2018-05-27 20:01:30.002021"], ["updated_at", "2018-05-27 20:01:30.002021"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Outros"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Outros"], ["created_at", "2018-05-27 20:01:30.007801"], ["updated_at", "2018-05-27 20:01:30.007801"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mSerie Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "series" WHERE "series"."highlighted" = $1 LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mMovie Create (1.6ms)[0m  [1m[32mINSERT INTO "movies" ("highlighted", "title", "description", "thumbnail_key", "video_key", "featured_thumbnail_key", "category_id", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["highlighted", true], ["title", "Ruby On Rails Api do zero ao Deploy"], ["description", "Aprenda a criar uma API completa com Ruby On Rails..."], ["thumbnail_key", "rails-api1.png"], ["video_key", "rails-api1.mp4"], ["featured_thumbnail_key", "rails-api-featured.png"], ["category_id", 1], ["thumbnail_cover_key", "rails-api-cover.png"], ["created_at", "2018-05-27 20:01:30.136856"], ["updated_at", "2018-05-27 20:01:30.136856"]]
+  [1m[36mPgSearch::Document Load (1.1ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 1], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[36mPgSearch::Document Create (1.3ms)[0m  [1m[32mINSERT INTO "pg_search_documents" ("content", "searchable_type", "searchable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Ruby On Rails Api do zero ao Deploy"], ["searchable_type", "Movie"], ["searchable_id", 1], ["created_at", "2018-05-27 20:01:30.167120"], ["updated_at", "2018-05-27 20:01:30.167120"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "example"], ["email", "example@example.com"], ["encrypted_password", "$2a$11$vcx8B9teFI5GhcyrbKP9bO0KePIdmEb9FA2pT2RWGspitPLRZENHq"], ["created_at", "2018-05-27 20:01:30.452150"], ["updated_at", "2018-05-27 20:01:30.452150"]]
+  [1m[35m (14.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example2@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "example2"], ["email", "example2@example.com"], ["encrypted_password", "$2a$11$lcwne/PZgr2wQ5Ba/0Ycheflg3C0JX.fcoJmzaF7Ea98gxKI1Gx2W"], ["created_at", "2018-05-27 20:01:30.629407"], ["updated_at", "2018-05-27 20:01:30.629407"]]
+  [1m[35m (16.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example3@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "example3"], ["email", "example3@example.com"], ["encrypted_password", "$2a$11$9cK4VYnmI.m6FgSDT0evfOZQ1Ae2KpBZvmf4x0.qxgk6AMhR7KME6"], ["created_at", "2018-05-27 20:01:30.821339"], ["updated_at", "2018-05-27 20:01:30.821339"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example4@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "example4"], ["email", "example4@example.com"], ["encrypted_password", "$2a$11$VXViBHiMJAZyaTguObtPf.oSMGibTDk4H387fSbe.CAYbhKWpwcA2"], ["created_at", "2018-05-27 20:01:30.985810"], ["updated_at", "2018-05-27 20:01:30.985810"]]
+  [1m[35m (15.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example5@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "example5"], ["email", "example5@example.com"], ["encrypted_password", "$2a$11$kopRgU3xMy3o1U44cdaUqepcN7AkrZ6AICs8QVdPnK1QgfwoRMaqy"], ["created_at", "2018-05-27 20:01:31.170073"], ["updated_at", "2018-05-27 20:01:31.170073"]]
+  [1m[35m (9.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "thumbnail_key", "video_key", "category_id", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Crie generators no Ruby On Rails"], ["description", "Generators são uma maneira de você automatizar a criação de conjuntos de arquivos no seu APP (assim como o rails new, o rails generate controller, o rails generate scaffold e etc), e nesse Screencast nós vamos aprender como cria-los.."], ["thumbnail_key", "generators.png"], ["video_key", "generators.mp4"], ["category_id", 1], ["thumbnail_cover_key", "generators-cover.png"], ["created_at", "2018-05-27 20:01:31.184899"], ["updated_at", "2018-05-27 20:01:31.184899"]]
+  [1m[36mPgSearch::Document Load (0.8ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 2], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[36mPgSearch::Document Create (0.9ms)[0m  [1m[32mINSERT INTO "pg_search_documents" ("content", "searchable_type", "searchable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Crie generators no Ruby On Rails"], ["searchable_type", "Movie"], ["searchable_id", 2], ["created_at", "2018-05-27 20:01:31.189047"], ["updated_at", "2018-05-27 20:01:31.189047"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "thumbnail_key", "video_key", "category_id", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Dominando o uso de Jobs no RoR - Parte 1"], ["description", "s Jobs são uma maneira fácil de você rodar processos demorados em background (evitando lentidão na hora de responder as requisições do usuário e tornando seu sistema mais fluido)."], ["thumbnail_key", "jobs1.png"], ["video_key", "jobs1.mp4"], ["category_id", 1], ["thumbnail_cover_key", "jobs1-cover.png"], ["created_at", "2018-05-27 20:01:31.196329"], ["updated_at", "2018-05-27 20:01:31.196329"]]
+  [1m[36mPgSearch::Document Load (0.8ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 3], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[36mPgSearch::Document Create (1.0ms)[0m  [1m[32mINSERT INTO "pg_search_documents" ("content", "searchable_type", "searchable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Dominando o uso de Jobs no RoR - Parte 1"], ["searchable_type", "Movie"], ["searchable_id", 3], ["created_at", "2018-05-27 20:01:31.200468"], ["updated_at", "2018-05-27 20:01:31.200468"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "thumbnail_key", "video_key", "category_id", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Dominando o uso de Jobs no RoR - Parte 2"], ["description", "s Jobs são uma maneira fácil de você rodar processos demorados em background (evitando lentidão na hora de responder as requisições do usuário e tornando seu sistema mais fluido)."], ["thumbnail_key", "jobs2.png"], ["video_key", "jobs2.mp4"], ["category_id", 1], ["thumbnail_cover_key", "jobs2-cover.png"], ["created_at", "2018-05-27 20:01:31.207687"], ["updated_at", "2018-05-27 20:01:31.207687"]]
+  [1m[36mPgSearch::Document Load (0.9ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 4], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[36mPgSearch::Document Create (1.0ms)[0m  [1m[32mINSERT INTO "pg_search_documents" ("content", "searchable_type", "searchable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Dominando o uso de Jobs no RoR - Parte 2"], ["searchable_type", "Movie"], ["searchable_id", 4], ["created_at", "2018-05-27 20:01:31.211889"], ["updated_at", "2018-05-27 20:01:31.211889"]]
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "thumbnail_key", "video_key", "category_id", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Instalando pacotes no Rails com Yarn"], ["description", "O Yarn é um gerenciador de pacotes javascript rápido, seguro e confiável que foi integrado no rails >= 5.1 para facilitar ainda mais a gestão das dependências. (agora você usa o Bundler para bibliotecas ruby e o Yarn para bibliotecas javascript, simples assim)"], ["thumbnail_key", "materialize.png"], ["video_key", "materialize.mp4"], ["category_id", 1], ["thumbnail_cover_key", "materialize-cover.png"], ["created_at", "2018-05-27 20:01:31.224489"], ["updated_at", "2018-05-27 20:01:31.224489"]]
+  [1m[36mPgSearch::Document Load (0.9ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 5], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[36mPgSearch::Document Create (1.0ms)[0m  [1m[32mINSERT INTO "pg_search_documents" ("content", "searchable_type", "searchable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Instalando pacotes no Rails com Yarn"], ["searchable_type", "Movie"], ["searchable_id", 5], ["created_at", "2018-05-27 20:01:31.228620"], ["updated_at", "2018-05-27 20:01:31.228620"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "thumbnail_key", "video_key", "category_id", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Como monitorar seu APP em produção"], ["description", "Hoje vamos falar de um tema muito interessante quando precisamos lidar com a verificação da saúde do nosso ambiente de produção: a instrumentação."], ["thumbnail_key", "obt18.png"], ["video_key", "obt18.mp4"], ["category_id", 4], ["thumbnail_cover_key", "obt18-cover.png"], ["created_at", "2018-05-27 20:01:31.235808"], ["updated_at", "2018-05-27 20:01:31.235808"]]
+  [1m[36mPgSearch::Document Load (0.9ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 6], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[36mPgSearch::Document Create (0.9ms)[0m  [1m[32mINSERT INTO "pg_search_documents" ("content", "searchable_type", "searchable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Como monitorar seu APP em produção"], ["searchable_type", "Movie"], ["searchable_id", 6], ["created_at", "2018-05-27 20:01:31.239898"], ["updated_at", "2018-05-27 20:01:31.239898"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "thumbnail_key", "video_key", "category_id", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Desmistificando a Criação de APIs"], ["description", "Desmistificando a Criação de APIs Desmistificando a Criação de APIs Desmistificando a Criação de APIs Desmistificando a Criação de APIs"], ["thumbnail_key", "obt17.png"], ["video_key", "obt17.mp4"], ["category_id", 4], ["thumbnail_cover_key", "obt17-cover.png"], ["created_at", "2018-05-27 20:01:31.247107"], ["updated_at", "2018-05-27 20:01:31.247107"]]
+  [1m[36mPgSearch::Document Load (0.7ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 7], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[36mPgSearch::Document Create (1.0ms)[0m  [1m[32mINSERT INTO "pg_search_documents" ("content", "searchable_type", "searchable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Desmistificando a Criação de APIs"], ["searchable_type", "Movie"], ["searchable_id", 7], ["created_at", "2018-05-27 20:01:31.251209"], ["updated_at", "2018-05-27 20:01:31.251209"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "thumbnail_key", "video_key", "category_id", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Dominando o Visual Studio Code - Parte 1"], ["description", "O Visual Studio Code é um editor de texto Open Source completo que possui integração nativa com o Git, milhares de extensões, é rápido e permite que você realize o debug facilmente do seu código."], ["thumbnail_key", "vscode1.png"], ["video_key", "vscode1.mp4"], ["category_id", 4], ["thumbnail_cover_key", "vscode1-cover.png"], ["created_at", "2018-05-27 20:01:31.258586"], ["updated_at", "2018-05-27 20:01:31.258586"]]
+  [1m[36mPgSearch::Document Load (1.1ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 8], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[36mPgSearch::Document Create (1.2ms)[0m  [1m[32mINSERT INTO "pg_search_documents" ("content", "searchable_type", "searchable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Dominando o Visual Studio Code - Parte 1"], ["searchable_type", "Movie"], ["searchable_id", 8], ["created_at", "2018-05-27 20:01:31.264102"], ["updated_at", "2018-05-27 20:01:31.264102"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mMovie Create (1.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "thumbnail_key", "video_key", "category_id", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Dominando o Visual Studio Code - Parte 1"], ["description", "O Visual Studio Code é um editor de texto Open Source completo que possui integração nativa com o Git, milhares de extensões, é rápido e permite que você realize o debug facilmente do seu código."], ["thumbnail_key", "vscode2.png"], ["video_key", "vscode2.mp4"], ["category_id", 4], ["thumbnail_cover_key", "vscode2-cover.png"], ["created_at", "2018-05-27 20:01:31.272290"], ["updated_at", "2018-05-27 20:01:31.272290"]]
+  [1m[36mPgSearch::Document Load (0.9ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 9], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[36mPgSearch::Document Create (1.2ms)[0m  [1m[32mINSERT INTO "pg_search_documents" ("content", "searchable_type", "searchable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Dominando o Visual Studio Code - Parte 1"], ["searchable_type", "Movie"], ["searchable_id", 9], ["created_at", "2018-05-27 20:01:31.277892"], ["updated_at", "2018-05-27 20:01:31.277892"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mMovie Create (1.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "thumbnail_key", "video_key", "category_id", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Dominando o Visual Studio Code - Parte 1"], ["description", "O Visual Studio Code é um editor de texto Open Source completo que possui integração nativa com o Git, milhares de extensões, é rápido e permite que você realize o debug facilmente do seu código."], ["thumbnail_key", "vscode3.png"], ["video_key", "vscode3.mp4"], ["category_id", 4], ["thumbnail_cover_key", "vscode3-cover.png"], ["created_at", "2018-05-27 20:01:31.285759"], ["updated_at", "2018-05-27 20:01:31.285759"]]
+  [1m[36mPgSearch::Document Load (0.9ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 10], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[36mPgSearch::Document Create (1.3ms)[0m  [1m[32mINSERT INTO "pg_search_documents" ("content", "searchable_type", "searchable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Dominando o Visual Studio Code - Parte 1"], ["searchable_type", "Movie"], ["searchable_id", 10], ["created_at", "2018-05-27 20:01:31.291060"], ["updated_at", "2018-05-27 20:01:31.291060"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mSerie Create (1.9ms)[0m  [1m[32mINSERT INTO "series" ("title", "description", "thumbnail_key", "category_id", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Visual Studio Code"], ["description", "Uma série completa para você dominar um dos mais importantes editores de texto"], ["thumbnail_key", "vscode1.png"], ["category_id", 4], ["thumbnail_cover_key", "vscode-serie-cover.png"], ["created_at", "2018-05-27 20:01:31.313789"], ["updated_at", "2018-05-27 20:01:31.313789"]]
+  [1m[36mPgSearch::Document Load (1.0ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 1], ["searchable_type", "Serie"], ["LIMIT", 1]]
+  [1m[36mPgSearch::Document Create (1.4ms)[0m  [1m[32mINSERT INTO "pg_search_documents" ("content", "searchable_type", "searchable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Visual Studio Code"], ["searchable_type", "Serie"], ["searchable_id", 1], ["created_at", "2018-05-27 20:01:31.320515"], ["updated_at", "2018-05-27 20:01:31.320515"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mMovie Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."episode_number" = $1 AND "movies"."serie_id" = $2 LIMIT $3[0m  [["episode_number", 1], ["serie_id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Create (1.3ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "thumbnail_key", "video_key", "episode_number", "serie_id", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Dominando o Visual Studio Code - Parte 1"], ["description", "O Visual Studio Code é um editor de texto Open Source completo que possui integração nativa com o Git, milhares de extensões, é rápido e permite que você realize o debug facilmente do seu código."], ["thumbnail_key", "vscode1.png"], ["video_key", "vscode1.mp4"], ["episode_number", 1], ["serie_id", 1], ["thumbnail_cover_key", "vscode1-cover.png"], ["created_at", "2018-05-27 20:01:31.331161"], ["updated_at", "2018-05-27 20:01:31.331161"]]
+  [1m[36mPgSearch::Document Load (0.9ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 11], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mMovie Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."episode_number" = $1 AND "movies"."serie_id" = $2 LIMIT $3[0m  [["episode_number", 2], ["serie_id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Create (1.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "thumbnail_key", "video_key", "episode_number", "serie_id", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Dominando o Visual Studio Code - Parte 2"], ["description", "O Visual Studio Code é um editor de texto Open Source completo que possui integração nativa com o Git, milhares de extensões, é rápido e permite que você realize o debug facilmente do seu código."], ["thumbnail_key", "vscode2.png"], ["video_key", "vscode2.mp4"], ["episode_number", 2], ["serie_id", 1], ["thumbnail_cover_key", "vscode2-cover.png"], ["created_at", "2018-05-27 20:01:31.343009"], ["updated_at", "2018-05-27 20:01:31.343009"]]
+  [1m[36mPgSearch::Document Load (1.1ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 12], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mMovie Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."episode_number" = $1 AND "movies"."serie_id" = $2 LIMIT $3[0m  [["episode_number", 3], ["serie_id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Create (1.9ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "thumbnail_key", "video_key", "episode_number", "serie_id", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Dominando o Visual Studio Code - Parte 3"], ["description", "O Visual Studio Code é um editor de texto Open Source completo que possui integração nativa com o Git, milhares de extensões, é rápido e permite que você realize o debug facilmente do seu código."], ["thumbnail_key", "vscode3.png"], ["video_key", "vscode3.mp4"], ["episode_number", 3], ["serie_id", 1], ["thumbnail_cover_key", "vscode3-cover.png"], ["created_at", "2018-05-27 20:01:31.357304"], ["updated_at", "2018-05-27 20:01:31.357304"]]
+  [1m[36mPgSearch::Document Load (1.1ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 13], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (1.7ms)[0m  [1m[32mINSERT INTO "players" ("start_date", "movie_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["start_date", "2018-05-27 20:01:31.388193"], ["movie_id", 1], ["user_id", 1], ["created_at", "2018-05-27 20:01:31.404932"], ["updated_at", "2018-05-27 20:01:31.404932"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (1.2ms)[0m  [1m[32mINSERT INTO "players" ("start_date", "movie_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["start_date", "2018-05-27 20:01:31.409811"], ["movie_id", 2], ["user_id", 1], ["created_at", "2018-05-27 20:01:31.411293"], ["updated_at", "2018-05-27 20:01:31.411293"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (1.1ms)[0m  [1m[32mINSERT INTO "players" ("start_date", "movie_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["start_date", "2018-05-27 20:01:31.415168"], ["movie_id", 3], ["user_id", 1], ["created_at", "2018-05-27 20:01:31.416437"], ["updated_at", "2018-05-27 20:01:31.416437"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (1.1ms)[0m  [1m[32mINSERT INTO "players" ("start_date", "movie_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["start_date", "2018-05-27 20:01:31.420323"], ["movie_id", 4], ["user_id", 1], ["created_at", "2018-05-27 20:01:31.421772"], ["updated_at", "2018-05-27 20:01:31.421772"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (1.0ms)[0m  [1m[32mINSERT INTO "players" ("start_date", "movie_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["start_date", "2018-05-27 20:01:31.425601"], ["movie_id", 6], ["user_id", 1], ["created_at", "2018-05-27 20:01:31.426953"], ["updated_at", "2018-05-27 20:01:31.426953"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReview Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = $1 AND "reviews"."reviewable_type" = $2 AND "reviews"."reviewable_id" = $3 LIMIT $4[0m  [["user_id", 1], ["reviewable_type", "Movie"], ["reviewable_id", 2], ["LIMIT", 1]]
+  [1m[36mReview Create (1.4ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "description", "reviewable_type", "reviewable_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["rating", 3], ["description", "I have always depended on the kindness of strangers."], ["reviewable_type", "Movie"], ["reviewable_id", 2], ["user_id", 1], ["created_at", "2018-05-27 20:01:31.471471"], ["updated_at", "2018-05-27 20:01:31.471471"]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReview Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = $1 AND "reviews"."reviewable_type" = $2 AND "reviews"."reviewable_id" = $3 LIMIT $4[0m  [["user_id", 2], ["reviewable_type", "Movie"], ["reviewable_id", 2], ["LIMIT", 1]]
+  [1m[36mReview Create (1.0ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "description", "reviewable_type", "reviewable_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["rating", 2], ["description", "Help me, Obi-Wan Kenobi. Youre my only hope.         "], ["reviewable_type", "Movie"], ["reviewable_id", 2], ["user_id", 2], ["created_at", "2018-05-27 20:01:31.479911"], ["updated_at", "2018-05-27 20:01:31.479911"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReview Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = $1 AND "reviews"."reviewable_type" = $2 AND "reviews"."reviewable_id" = $3 LIMIT $4[0m  [["user_id", 3], ["reviewable_type", "Movie"], ["reviewable_id", 2], ["LIMIT", 1]]
+  [1m[36mReview Create (0.9ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "description", "reviewable_type", "reviewable_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["rating", 5], ["description", "Every time a bell rings, an angel gets his wings.    "], ["reviewable_type", "Movie"], ["reviewable_id", 2], ["user_id", 3], ["created_at", "2018-05-27 20:01:31.487134"], ["updated_at", "2018-05-27 20:01:31.487134"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReview Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = $1 AND "reviews"."reviewable_type" = $2 AND "reviews"."reviewable_id" = $3 LIMIT $4[0m  [["user_id", 4], ["reviewable_type", "Movie"], ["reviewable_id", 2], ["LIMIT", 1]]
+  [1m[36mReview Create (1.0ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "description", "reviewable_type", "reviewable_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["rating", 3], ["description", "Magic Mirror on the wall, who is the fairest one of all?"], ["reviewable_type", "Movie"], ["reviewable_id", 2], ["user_id", 4], ["created_at", "2018-05-27 20:01:31.494381"], ["updated_at", "2018-05-27 20:01:31.494381"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReview Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = $1 AND "reviews"."reviewable_type" = $2 AND "reviews"."reviewable_id" = $3 LIMIT $4[0m  [["user_id", 5], ["reviewable_type", "Movie"], ["reviewable_id", 2], ["LIMIT", 1]]
+  [1m[36mReview Create (1.0ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "description", "reviewable_type", "reviewable_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["rating", 5], ["description", "Just when I thought I was out, they pull me back in."], ["reviewable_type", "Movie"], ["reviewable_id", 2], ["user_id", 5], ["created_at", "2018-05-27 20:01:31.501613"], ["updated_at", "2018-05-27 20:01:31.501613"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMovie Load (1.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFavorite Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."favoritable_type" = $2 AND "favorites"."favoritable_id" = $3 LIMIT $4[0m  [["user_id", 1], ["favoritable_type", "Movie"], ["favoritable_id", 1], ["LIMIT", 1]]
+  [1m[36mFavorite Create (1.5ms)[0m  [1m[32mINSERT INTO "favorites" ("favoritable_type", "favoritable_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["favoritable_type", "Movie"], ["favoritable_id", 1], ["user_id", 1], ["created_at", "2018-05-27 20:01:31.571080"], ["updated_at", "2018-05-27 20:01:31.571080"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMovie Load (0.9ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFavorite Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."favoritable_type" = $2 AND "favorites"."favoritable_id" = $3 LIMIT $4[0m  [["user_id", 1], ["favoritable_type", "Movie"], ["favoritable_id", 2], ["LIMIT", 1]]
+  [1m[36mFavorite Create (1.0ms)[0m  [1m[32mINSERT INTO "favorites" ("favoritable_type", "favoritable_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["favoritable_type", "Movie"], ["favoritable_id", 2], ["user_id", 1], ["created_at", "2018-05-27 20:01:31.579904"], ["updated_at", "2018-05-27 20:01:31.579904"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMovie Load (1.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFavorite Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."favoritable_type" = $2 AND "favorites"."favoritable_id" = $3 LIMIT $4[0m  [["user_id", 1], ["favoritable_type", "Movie"], ["favoritable_id", 3], ["LIMIT", 1]]
+  [1m[36mFavorite Create (0.9ms)[0m  [1m[32mINSERT INTO "favorites" ("favoritable_type", "favoritable_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["favoritable_type", "Movie"], ["favoritable_id", 3], ["user_id", 1], ["created_at", "2018-05-27 20:01:31.588303"], ["updated_at", "2018-05-27 20:01:31.588303"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMovie Load (0.9ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFavorite Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."favoritable_type" = $2 AND "favorites"."favoritable_id" = $3 LIMIT $4[0m  [["user_id", 1], ["favoritable_type", "Movie"], ["favoritable_id", 4], ["LIMIT", 1]]
+  [1m[36mFavorite Create (0.9ms)[0m  [1m[32mINSERT INTO "favorites" ("favoritable_type", "favoritable_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["favoritable_type", "Movie"], ["favoritable_id", 4], ["user_id", 1], ["created_at", "2018-05-27 20:01:31.596148"], ["updated_at", "2018-05-27 20:01:31.596148"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFavorite Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."favoritable_type" = $2 AND "favorites"."favoritable_id" = $3 LIMIT $4[0m  [["user_id", 1], ["favoritable_type", "Movie"], ["favoritable_id", 5], ["LIMIT", 1]]
+  [1m[36mFavorite Create (1.0ms)[0m  [1m[32mINSERT INTO "favorites" ("favoritable_type", "favoritable_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["favoritable_type", "Movie"], ["favoritable_id", 5], ["user_id", 1], ["created_at", "2018-05-27 20:01:31.604228"], ["updated_at", "2018-05-27 20:01:31.604228"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 172.22.0.1 at 2018-05-27 20:01:45 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 48ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 172.22.0.1 at 2018-05-27 20:01:47 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (141.5ms)
+Completed 200 OK in 33670ms (Views: 33629.1ms | ActiveRecord: 4.8ms)
+
+
+Started POST "/users/sign_in" for 172.22.0.1 at 2018-05-27 20:02:32 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"amj7LaY/dWmNwM8RrRnt1I33q7AqE8rspeirp6c3MmXGiM9CXY4eAfaVOpB69z97io0H6872NP4hp+y3zU+R7Q==", "user"=>{"email"=>"example@example.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "example@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "current_sign_in_ip" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["current_sign_in_at", "2018-05-27 20:02:33.677027"], ["last_sign_in_at", "2018-05-27 20:02:33.677027"], ["current_sign_in_ip", "172.22.0.1/32"], ["last_sign_in_ip", "172.22.0.1/32"], ["sign_in_count", 1], ["updated_at", "2018-05-27 20:02:33.693610"], ["id", 1]]
+  [1m[35m (45.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1135ms (ActiveRecord: 48.0ms)
+
+
+Started GET "/" for 172.22.0.1 at 2018-05-27 20:02:34 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 1396ms (Views: 1327.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/edit" for 172.22.0.1 at 2018-05-27 20:02:37 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 430ms (Views: 426.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 172.22.0.1 at 2018-05-27 20:02:45 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 632ms (Views: 586.4ms | ActiveRecord: 0.8ms)
+
+
