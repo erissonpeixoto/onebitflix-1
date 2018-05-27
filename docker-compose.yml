@@ -16,6 +16,8 @@ services:
       - '3000:3000'
     volumes:
       - '.:/usr/src/app'
+    environment:
+     - DB_HOST=db
 
 volumes:
   postgres:
