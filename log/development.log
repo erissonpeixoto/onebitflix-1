@@ -1182,3 +1182,666 @@ Completed 200 OK in 379ms (Views: 368.2ms | ActiveRecord: 0.0ms)
   [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(7704122458228562940)[0m
   [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (16.8ms)[0m  [1m[35mCREATE DATABASE "onebitflix_development" ENCODING = 'unicode'[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE DATABASE "onebitflix_test" ENCODING = 'unicode'[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7704122458228562940)[0m
+  [1m[35m (23.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7704122458228562940)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 172.22.0.1 at 2018-05-27 13:52:21 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 30ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 172.22.0.1 at 2018-05-27 13:52:22 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (42.9ms)
+Completed 200 OK in 3941ms (Views: 3912.2ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/users/sign_in" for 172.22.0.1 at 2018-05-27 13:53:02 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wGZOmVPgdF2wN3mHgKUBCVtBjD1p8j9Nd5xZcsC6OM35nu+FpHAFU2vVX1ejZjwZUSpD/NJxaGk7ejFAIBKvgQ==", "user"=>{"email"=>"example@example.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (66.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "example@example.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 98ms (ActiveRecord: 66.5ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wGZOmVPgdF2wN3mHgKUBCVtBjD1p8j9Nd5xZcsC6OM35nu+FpHAFU2vVX1ejZjwZUSpD/NJxaGk7ejFAIBKvgQ==", "user"=>{"email"=>"example@example.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (26.3ms)
+Completed 200 OK in 698ms (Views: 454.6ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (13.4ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Ruby On Rails"], ["LIMIT", 1]]
+  [1m[36mCategory Create (13.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Ruby On Rails"], ["created_at", "2018-05-27 13:53:56.380697"], ["updated_at", "2018-05-27 13:53:56.380697"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Talks"], ["LIMIT", 1]]
+  [1m[36mCategory Create (1.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Talks"], ["created_at", "2018-05-27 13:53:56.421334"], ["updated_at", "2018-05-27 13:53:56.421334"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Testes"], ["LIMIT", 1]]
+  [1m[36mCategory Create (1.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Testes"], ["created_at", "2018-05-27 13:53:56.428358"], ["updated_at", "2018-05-27 13:53:56.428358"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Outros"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.9ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Outros"], ["created_at", "2018-05-27 13:53:56.434592"], ["updated_at", "2018-05-27 13:53:56.434592"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (11.0ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mSerie Exists (3.0ms)[0m  [1m[34mSELECT  1 AS one FROM "series" WHERE "series"."highlighted" = $1 LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mMovie Create (17.1ms)[0m  [1m[32mINSERT INTO "movies" ("highlighted", "title", "description", "thumbnail_key", "video_key", "featured_thumbnail_key", "category_id", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["highlighted", true], ["title", "Ruby On Rails Api do zero ao Deploy"], ["description", "Aprenda a criar uma API completa com Ruby On Rails..."], ["thumbnail_key", "rails-api1.png"], ["video_key", "rails-api1.mp4"], ["featured_thumbnail_key", "rails-api-featured.png"], ["category_id", 1], ["thumbnail_cover_key", "rails-api-cover.png"], ["created_at", "2018-05-27 13:53:56.576150"], ["updated_at", "2018-05-27 13:53:56.576150"]]
+  [1m[36mPgSearch::Document Load (13.7ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 1], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[36mPgSearch::Document Create (2.1ms)[0m  [1m[32mINSERT INTO "pg_search_documents" ("content", "searchable_type", "searchable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Ruby On Rails Api do zero ao Deploy"], ["searchable_type", "Movie"], ["searchable_id", 1], ["created_at", "2018-05-27 13:53:56.634826"], ["updated_at", "2018-05-27 13:53:56.634826"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "example"], ["email", "example@example.com"], ["encrypted_password", "$2a$11$iQesnCQjCtXLGCwkW414re8ueqR7zG5JTzJpxTbm03XTqHgWkR.vq"], ["created_at", "2018-05-27 13:53:56.857784"], ["updated_at", "2018-05-27 13:53:56.857784"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example2@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "example2"], ["email", "example2@example.com"], ["encrypted_password", "$2a$11$jGSnEIUFHXp8BGwlAQ7p7e0e9aeshiaLsxnF7/8Re7mTsU3F9foyW"], ["created_at", "2018-05-27 13:53:57.024501"], ["updated_at", "2018-05-27 13:53:57.024501"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example3@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "example3"], ["email", "example3@example.com"], ["encrypted_password", "$2a$11$2mN8vuia7U/Ro7DNp2a2QedOqDUwfWkMTQkja/HVfTzqwQHsJH1Ba"], ["created_at", "2018-05-27 13:53:57.184798"], ["updated_at", "2018-05-27 13:53:57.184798"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example4@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "example4"], ["email", "example4@example.com"], ["encrypted_password", "$2a$11$xjMc9HOWm0le6EZUHBGlE.t/2sg4xbZ/ekN1oNevJoZywPBqZuGOK"], ["created_at", "2018-05-27 13:53:57.345959"], ["updated_at", "2018-05-27 13:53:57.345959"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example5@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "example5"], ["email", "example5@example.com"], ["encrypted_password", "$2a$11$CoiZfYMaRJctMcKc4WsL4.CFTTEeLjB2RFmb1pizUeM0nMIBDwxIW"], ["created_at", "2018-05-27 13:53:57.506807"], ["updated_at", "2018-05-27 13:53:57.506807"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "thumbnail_key", "video_key", "category_id", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Crie generators no Ruby On Rails"], ["description", "Generators são uma maneira de você automatizar a criação de conjuntos de arquivos no seu APP (assim como o rails new, o rails generate controller, o rails generate scaffold e etc), e nesse Screencast nós vamos aprender como cria-los.."], ["thumbnail_key", "generators.png"], ["video_key", "generators.mp4"], ["category_id", 1], ["thumbnail_cover_key", "generators-cover.png"], ["created_at", "2018-05-27 13:53:57.514568"], ["updated_at", "2018-05-27 13:53:57.514568"]]
+  [1m[36mPgSearch::Document Load (0.8ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 2], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[36mPgSearch::Document Create (1.0ms)[0m  [1m[32mINSERT INTO "pg_search_documents" ("content", "searchable_type", "searchable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Crie generators no Ruby On Rails"], ["searchable_type", "Movie"], ["searchable_id", 2], ["created_at", "2018-05-27 13:53:57.519540"], ["updated_at", "2018-05-27 13:53:57.519540"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "thumbnail_key", "video_key", "category_id", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Dominando o uso de Jobs no RoR - Parte 1"], ["description", "s Jobs são uma maneira fácil de você rodar processos demorados em background (evitando lentidão na hora de responder as requisições do usuário e tornando seu sistema mais fluido)."], ["thumbnail_key", "jobs1.png"], ["video_key", "jobs1.mp4"], ["category_id", 1], ["thumbnail_cover_key", "jobs1-cover.png"], ["created_at", "2018-05-27 13:53:57.527053"], ["updated_at", "2018-05-27 13:53:57.527053"]]
+  [1m[36mPgSearch::Document Load (0.8ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 3], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[36mPgSearch::Document Create (0.9ms)[0m  [1m[32mINSERT INTO "pg_search_documents" ("content", "searchable_type", "searchable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Dominando o uso de Jobs no RoR - Parte 1"], ["searchable_type", "Movie"], ["searchable_id", 3], ["created_at", "2018-05-27 13:53:57.531557"], ["updated_at", "2018-05-27 13:53:57.531557"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "thumbnail_key", "video_key", "category_id", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Dominando o uso de Jobs no RoR - Parte 2"], ["description", "s Jobs são uma maneira fácil de você rodar processos demorados em background (evitando lentidão na hora de responder as requisições do usuário e tornando seu sistema mais fluido)."], ["thumbnail_key", "jobs2.png"], ["video_key", "jobs2.mp4"], ["category_id", 1], ["thumbnail_cover_key", "jobs2-cover.png"], ["created_at", "2018-05-27 13:53:57.538734"], ["updated_at", "2018-05-27 13:53:57.538734"]]
+  [1m[36mPgSearch::Document Load (0.9ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 4], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[36mPgSearch::Document Create (1.0ms)[0m  [1m[32mINSERT INTO "pg_search_documents" ("content", "searchable_type", "searchable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Dominando o uso de Jobs no RoR - Parte 2"], ["searchable_type", "Movie"], ["searchable_id", 4], ["created_at", "2018-05-27 13:53:57.543114"], ["updated_at", "2018-05-27 13:53:57.543114"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "thumbnail_key", "video_key", "category_id", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Instalando pacotes no Rails com Yarn"], ["description", "O Yarn é um gerenciador de pacotes javascript rápido, seguro e confiável que foi integrado no rails >= 5.1 para facilitar ainda mais a gestão das dependências. (agora você usa o Bundler para bibliotecas ruby e o Yarn para bibliotecas javascript, simples assim)"], ["thumbnail_key", "materialize.png"], ["video_key", "materialize.mp4"], ["category_id", 1], ["thumbnail_cover_key", "materialize-cover.png"], ["created_at", "2018-05-27 13:53:57.550212"], ["updated_at", "2018-05-27 13:53:57.550212"]]
+  [1m[36mPgSearch::Document Load (0.9ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 5], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[36mPgSearch::Document Create (1.0ms)[0m  [1m[32mINSERT INTO "pg_search_documents" ("content", "searchable_type", "searchable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Instalando pacotes no Rails com Yarn"], ["searchable_type", "Movie"], ["searchable_id", 5], ["created_at", "2018-05-27 13:53:57.554756"], ["updated_at", "2018-05-27 13:53:57.554756"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "thumbnail_key", "video_key", "category_id", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Como monitorar seu APP em produção"], ["description", "Hoje vamos falar de um tema muito interessante quando precisamos lidar com a verificação da saúde do nosso ambiente de produção: a instrumentação."], ["thumbnail_key", "obt18.png"], ["video_key", "obt18.mp4"], ["category_id", 4], ["thumbnail_cover_key", "obt18-cover.png"], ["created_at", "2018-05-27 13:53:57.562250"], ["updated_at", "2018-05-27 13:53:57.562250"]]
+  [1m[36mPgSearch::Document Load (1.0ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 6], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[36mPgSearch::Document Create (0.9ms)[0m  [1m[32mINSERT INTO "pg_search_documents" ("content", "searchable_type", "searchable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Como monitorar seu APP em produção"], ["searchable_type", "Movie"], ["searchable_id", 6], ["created_at", "2018-05-27 13:53:57.567101"], ["updated_at", "2018-05-27 13:53:57.567101"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "thumbnail_key", "video_key", "category_id", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Desmistificando a Criação de APIs"], ["description", "Desmistificando a Criação de APIs Desmistificando a Criação de APIs Desmistificando a Criação de APIs Desmistificando a Criação de APIs"], ["thumbnail_key", "obt17.png"], ["video_key", "obt17.mp4"], ["category_id", 4], ["thumbnail_cover_key", "obt17-cover.png"], ["created_at", "2018-05-27 13:53:57.581996"], ["updated_at", "2018-05-27 13:53:57.581996"]]
+  [1m[36mPgSearch::Document Load (0.8ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 7], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[36mPgSearch::Document Create (1.0ms)[0m  [1m[32mINSERT INTO "pg_search_documents" ("content", "searchable_type", "searchable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Desmistificando a Criação de APIs"], ["searchable_type", "Movie"], ["searchable_id", 7], ["created_at", "2018-05-27 13:53:57.586195"], ["updated_at", "2018-05-27 13:53:57.586195"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mMovie Create (0.9ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "thumbnail_key", "video_key", "category_id", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Dominando o Visual Studio Code - Parte 1"], ["description", "O Visual Studio Code é um editor de texto Open Source completo que possui integração nativa com o Git, milhares de extensões, é rápido e permite que você realize o debug facilmente do seu código."], ["thumbnail_key", "vscode1.png"], ["video_key", "vscode1.mp4"], ["category_id", 4], ["thumbnail_cover_key", "vscode1-cover.png"], ["created_at", "2018-05-27 13:53:57.593435"], ["updated_at", "2018-05-27 13:53:57.593435"]]
+  [1m[36mPgSearch::Document Load (0.8ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 8], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[36mPgSearch::Document Create (1.0ms)[0m  [1m[32mINSERT INTO "pg_search_documents" ("content", "searchable_type", "searchable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Dominando o Visual Studio Code - Parte 1"], ["searchable_type", "Movie"], ["searchable_id", 8], ["created_at", "2018-05-27 13:53:57.597430"], ["updated_at", "2018-05-27 13:53:57.597430"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mMovie Create (0.9ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "thumbnail_key", "video_key", "category_id", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Dominando o Visual Studio Code - Parte 1"], ["description", "O Visual Studio Code é um editor de texto Open Source completo que possui integração nativa com o Git, milhares de extensões, é rápido e permite que você realize o debug facilmente do seu código."], ["thumbnail_key", "vscode2.png"], ["video_key", "vscode2.mp4"], ["category_id", 4], ["thumbnail_cover_key", "vscode2-cover.png"], ["created_at", "2018-05-27 13:53:57.604526"], ["updated_at", "2018-05-27 13:53:57.604526"]]
+  [1m[36mPgSearch::Document Load (0.8ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 9], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[36mPgSearch::Document Create (0.9ms)[0m  [1m[32mINSERT INTO "pg_search_documents" ("content", "searchable_type", "searchable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Dominando o Visual Studio Code - Parte 1"], ["searchable_type", "Movie"], ["searchable_id", 9], ["created_at", "2018-05-27 13:53:57.608638"], ["updated_at", "2018-05-27 13:53:57.608638"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "thumbnail_key", "video_key", "category_id", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Dominando o Visual Studio Code - Parte 1"], ["description", "O Visual Studio Code é um editor de texto Open Source completo que possui integração nativa com o Git, milhares de extensões, é rápido e permite que você realize o debug facilmente do seu código."], ["thumbnail_key", "vscode3.png"], ["video_key", "vscode3.mp4"], ["category_id", 4], ["thumbnail_cover_key", "vscode3-cover.png"], ["created_at", "2018-05-27 13:53:57.615739"], ["updated_at", "2018-05-27 13:53:57.615739"]]
+  [1m[36mPgSearch::Document Load (0.8ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 10], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[36mPgSearch::Document Create (0.9ms)[0m  [1m[32mINSERT INTO "pg_search_documents" ("content", "searchable_type", "searchable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Dominando o Visual Studio Code - Parte 1"], ["searchable_type", "Movie"], ["searchable_id", 10], ["created_at", "2018-05-27 13:53:57.619727"], ["updated_at", "2018-05-27 13:53:57.619727"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mSerie Create (2.5ms)[0m  [1m[32mINSERT INTO "series" ("title", "description", "thumbnail_key", "category_id", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Visual Studio Code"], ["description", "Uma série completa para você dominar um dos mais importantes editores de texto"], ["thumbnail_key", "vscode1.png"], ["category_id", 4], ["thumbnail_cover_key", "vscode-serie-cover.png"], ["created_at", "2018-05-27 13:53:57.639268"], ["updated_at", "2018-05-27 13:53:57.639268"]]
+  [1m[36mPgSearch::Document Load (0.8ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 1], ["searchable_type", "Serie"], ["LIMIT", 1]]
+  [1m[36mPgSearch::Document Create (0.9ms)[0m  [1m[32mINSERT INTO "pg_search_documents" ("content", "searchable_type", "searchable_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Visual Studio Code"], ["searchable_type", "Serie"], ["searchable_id", 1], ["created_at", "2018-05-27 13:53:57.646045"], ["updated_at", "2018-05-27 13:53:57.646045"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mMovie Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."episode_number" = $1 AND "movies"."serie_id" = $2 LIMIT $3[0m  [["episode_number", 1], ["serie_id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "thumbnail_key", "video_key", "episode_number", "serie_id", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Dominando o Visual Studio Code - Parte 1"], ["description", "O Visual Studio Code é um editor de texto Open Source completo que possui integração nativa com o Git, milhares de extensões, é rápido e permite que você realize o debug facilmente do seu código."], ["thumbnail_key", "vscode1.png"], ["video_key", "vscode1.mp4"], ["episode_number", 1], ["serie_id", 1], ["thumbnail_cover_key", "vscode1-cover.png"], ["created_at", "2018-05-27 13:53:57.654489"], ["updated_at", "2018-05-27 13:53:57.654489"]]
+  [1m[36mPgSearch::Document Load (0.8ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 11], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mMovie Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."episode_number" = $1 AND "movies"."serie_id" = $2 LIMIT $3[0m  [["episode_number", 2], ["serie_id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "thumbnail_key", "video_key", "episode_number", "serie_id", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Dominando o Visual Studio Code - Parte 2"], ["description", "O Visual Studio Code é um editor de texto Open Source completo que possui integração nativa com o Git, milhares de extensões, é rápido e permite que você realize o debug facilmente do seu código."], ["thumbnail_key", "vscode2.png"], ["video_key", "vscode2.mp4"], ["episode_number", 2], ["serie_id", 1], ["thumbnail_cover_key", "vscode2-cover.png"], ["created_at", "2018-05-27 13:53:57.664607"], ["updated_at", "2018-05-27 13:53:57.664607"]]
+  [1m[36mPgSearch::Document Load (0.8ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 12], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."highlighted" = $1 AND "movies"."id" IS NOT NULL LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mMovie Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" WHERE "movies"."episode_number" = $1 AND "movies"."serie_id" = $2 LIMIT $3[0m  [["episode_number", 3], ["serie_id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "thumbnail_key", "video_key", "episode_number", "serie_id", "thumbnail_cover_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Dominando o Visual Studio Code - Parte 3"], ["description", "O Visual Studio Code é um editor de texto Open Source completo que possui integração nativa com o Git, milhares de extensões, é rápido e permite que você realize o debug facilmente do seu código."], ["thumbnail_key", "vscode3.png"], ["video_key", "vscode3.mp4"], ["episode_number", 3], ["serie_id", 1], ["thumbnail_cover_key", "vscode3-cover.png"], ["created_at", "2018-05-27 13:53:57.674626"], ["updated_at", "2018-05-27 13:53:57.674626"]]
+  [1m[36mPgSearch::Document Load (0.8ms)[0m  [1m[34mSELECT  "pg_search_documents".* FROM "pg_search_documents" WHERE "pg_search_documents"."searchable_id" = $1 AND "pg_search_documents"."searchable_type" = $2 LIMIT $3[0m  [["searchable_id", 13], ["searchable_type", "Movie"], ["LIMIT", 1]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (11.5ms)[0m  [1m[32mINSERT INTO "players" ("start_date", "movie_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["start_date", "2018-05-27 13:53:57.704097"], ["movie_id", 1], ["user_id", 2], ["created_at", "2018-05-27 13:53:57.720693"], ["updated_at", "2018-05-27 13:53:57.720693"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (1.0ms)[0m  [1m[32mINSERT INTO "players" ("start_date", "movie_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["start_date", "2018-05-27 13:53:57.734848"], ["movie_id", 2], ["user_id", 2], ["created_at", "2018-05-27 13:53:57.736085"], ["updated_at", "2018-05-27 13:53:57.736085"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (1.0ms)[0m  [1m[32mINSERT INTO "players" ("start_date", "movie_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["start_date", "2018-05-27 13:53:57.739890"], ["movie_id", 3], ["user_id", 2], ["created_at", "2018-05-27 13:53:57.741269"], ["updated_at", "2018-05-27 13:53:57.741269"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (1.2ms)[0m  [1m[32mINSERT INTO "players" ("start_date", "movie_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["start_date", "2018-05-27 13:53:57.745055"], ["movie_id", 4], ["user_id", 2], ["created_at", "2018-05-27 13:53:57.746439"], ["updated_at", "2018-05-27 13:53:57.746439"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Create (1.1ms)[0m  [1m[32mINSERT INTO "players" ("start_date", "movie_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["start_date", "2018-05-27 13:53:57.750491"], ["movie_id", 6], ["user_id", 2], ["created_at", "2018-05-27 13:53:57.751725"], ["updated_at", "2018-05-27 13:53:57.751725"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReview Exists (26.1ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = $1 AND "reviews"."reviewable_type" = $2 AND "reviews"."reviewable_id" = $3 LIMIT $4[0m  [["user_id", 2], ["reviewable_type", "Movie"], ["reviewable_id", 2], ["LIMIT", 1]]
+  [1m[36mReview Create (2.2ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "description", "reviewable_type", "reviewable_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["rating", 3], ["description", "I have always depended on the kindness of strangers."], ["reviewable_type", "Movie"], ["reviewable_id", 2], ["user_id", 2], ["created_at", "2018-05-27 13:53:57.825679"], ["updated_at", "2018-05-27 13:53:57.825679"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReview Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = $1 AND "reviews"."reviewable_type" = $2 AND "reviews"."reviewable_id" = $3 LIMIT $4[0m  [["user_id", 3], ["reviewable_type", "Movie"], ["reviewable_id", 2], ["LIMIT", 1]]
+  [1m[36mReview Create (1.2ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "description", "reviewable_type", "reviewable_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["rating", 2], ["description", "Help me, Obi-Wan Kenobi. Youre my only hope.         "], ["reviewable_type", "Movie"], ["reviewable_id", 2], ["user_id", 3], ["created_at", "2018-05-27 13:53:57.835301"], ["updated_at", "2018-05-27 13:53:57.835301"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReview Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = $1 AND "reviews"."reviewable_type" = $2 AND "reviews"."reviewable_id" = $3 LIMIT $4[0m  [["user_id", 4], ["reviewable_type", "Movie"], ["reviewable_id", 2], ["LIMIT", 1]]
+  [1m[36mReview Create (1.1ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "description", "reviewable_type", "reviewable_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["rating", 5], ["description", "Every time a bell rings, an angel gets his wings.    "], ["reviewable_type", "Movie"], ["reviewable_id", 2], ["user_id", 4], ["created_at", "2018-05-27 13:53:57.843166"], ["updated_at", "2018-05-27 13:53:57.843166"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReview Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = $1 AND "reviews"."reviewable_type" = $2 AND "reviews"."reviewable_id" = $3 LIMIT $4[0m  [["user_id", 5], ["reviewable_type", "Movie"], ["reviewable_id", 2], ["LIMIT", 1]]
+  [1m[36mReview Create (1.2ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "description", "reviewable_type", "reviewable_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["rating", 3], ["description", "Magic Mirror on the wall, who is the fairest one of all?"], ["reviewable_type", "Movie"], ["reviewable_id", 2], ["user_id", 5], ["created_at", "2018-05-27 13:53:57.850827"], ["updated_at", "2018-05-27 13:53:57.850827"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReview Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = $1 AND "reviews"."reviewable_type" = $2 AND "reviews"."reviewable_id" = $3 LIMIT $4[0m  [["user_id", 6], ["reviewable_type", "Movie"], ["reviewable_id", 2], ["LIMIT", 1]]
+  [1m[36mReview Create (1.1ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "description", "reviewable_type", "reviewable_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["rating", 5], ["description", "Just when I thought I was out, they pull me back in."], ["reviewable_type", "Movie"], ["reviewable_id", 2], ["user_id", 6], ["created_at", "2018-05-27 13:53:57.858679"], ["updated_at", "2018-05-27 13:53:57.858679"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMovie Load (1.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFavorite Exists (3.9ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."favoritable_type" = $2 AND "favorites"."favoritable_id" = $3 LIMIT $4[0m  [["user_id", 2], ["favoritable_type", "Movie"], ["favoritable_id", 1], ["LIMIT", 1]]
+  [1m[36mFavorite Create (24.3ms)[0m  [1m[32mINSERT INTO "favorites" ("favoritable_type", "favoritable_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["favoritable_type", "Movie"], ["favoritable_id", 1], ["user_id", 2], ["created_at", "2018-05-27 13:53:57.913367"], ["updated_at", "2018-05-27 13:53:57.913367"]]
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMovie Load (1.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFavorite Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."favoritable_type" = $2 AND "favorites"."favoritable_id" = $3 LIMIT $4[0m  [["user_id", 2], ["favoritable_type", "Movie"], ["favoritable_id", 2], ["LIMIT", 1]]
+  [1m[36mFavorite Create (1.2ms)[0m  [1m[32mINSERT INTO "favorites" ("favoritable_type", "favoritable_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["favoritable_type", "Movie"], ["favoritable_id", 2], ["user_id", 2], ["created_at", "2018-05-27 13:53:57.954511"], ["updated_at", "2018-05-27 13:53:57.954511"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMovie Load (1.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFavorite Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."favoritable_type" = $2 AND "favorites"."favoritable_id" = $3 LIMIT $4[0m  [["user_id", 2], ["favoritable_type", "Movie"], ["favoritable_id", 3], ["LIMIT", 1]]
+  [1m[36mFavorite Create (1.2ms)[0m  [1m[32mINSERT INTO "favorites" ("favoritable_type", "favoritable_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["favoritable_type", "Movie"], ["favoritable_id", 3], ["user_id", 2], ["created_at", "2018-05-27 13:53:57.964350"], ["updated_at", "2018-05-27 13:53:57.964350"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMovie Load (1.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFavorite Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."favoritable_type" = $2 AND "favorites"."favoritable_id" = $3 LIMIT $4[0m  [["user_id", 2], ["favoritable_type", "Movie"], ["favoritable_id", 4], ["LIMIT", 1]]
+  [1m[36mFavorite Create (1.2ms)[0m  [1m[32mINSERT INTO "favorites" ("favoritable_type", "favoritable_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["favoritable_type", "Movie"], ["favoritable_id", 4], ["user_id", 2], ["created_at", "2018-05-27 13:53:57.973879"], ["updated_at", "2018-05-27 13:53:57.973879"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMovie Load (1.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFavorite Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."favoritable_type" = $2 AND "favorites"."favoritable_id" = $3 LIMIT $4[0m  [["user_id", 2], ["favoritable_type", "Movie"], ["favoritable_id", 5], ["LIMIT", 1]]
+  [1m[36mFavorite Create (1.1ms)[0m  [1m[32mINSERT INTO "favorites" ("favoritable_type", "favoritable_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["favoritable_type", "Movie"], ["favoritable_id", 5], ["user_id", 2], ["created_at", "2018-05-27 13:53:57.983657"], ["updated_at", "2018-05-27 13:53:57.983657"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/users/sign_in" for 172.22.0.1 at 2018-05-27 13:54:20 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fqTRl9JnvWkPKBa9CRvJIBCLFLfgpJ+e0QrzBU7kVuVHXHCLJffMZ9TKMG0q2PQwGuDbdlsnyLqd7Js3rkzBqQ==", "user"=>{"email"=>"example@example.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "example@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "current_sign_in_ip" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["current_sign_in_at", "2018-05-27 13:54:20.636839"], ["last_sign_in_at", "2018-05-27 13:54:20.636839"], ["current_sign_in_ip", "172.22.0.1/32"], ["last_sign_in_ip", "172.22.0.1/32"], ["sign_in_count", 1], ["updated_at", "2018-05-27 13:54:20.638774"], ["id", 2]]
+  [1m[35m (12.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 252ms (ActiveRecord: 14.1ms)
+
+
+Started GET "/" for 172.22.0.1 at 2018-05-27 13:54:20 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 482ms (Views: 446.2ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/users/sign_out" for 172.22.0.1 at 2018-05-27 13:54:26 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"A2O8AEkaPpMgV7qMGlU4/z5ZgnBQ+gfJUAZT2Hy4/JXGamp25dNrBY2vfZBgTJeDWRVa4kbG0MA3ciq1nqc8YQ=="}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 172.22.0.1 at 2018-05-27 13:54:26 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 172.22.0.1 at 2018-05-27 13:54:26 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 291ms (Views: 289.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/dashboard" for 172.22.0.1 at 2018-05-27 13:55:34 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::DashboardsController#index as */*
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 172.22.0.1 at 2018-05-27 13:55:34 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as */*
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 349ms (Views: 347.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 172.22.0.1 at 2018-05-27 14:02:32 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4WHY4lOHpoMI/Gbt1U3e4DjwR6XPwLjiqLz+XQG9zrOYeANSGhyhj0hhgC3CVeOP3l9mIBCbqp0/UtSjqLJjbQ==", "user"=>{"email"=>"example@example.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "example@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "sign_in_count" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["current_sign_in_at", "2018-05-27 14:02:33.128515"], ["sign_in_count", 2], ["updated_at", "2018-05-27 14:02:33.130805"], ["id", 2]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 282ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/" for 172.22.0.1 at 2018-05-27 14:02:33 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 489ms (Views: 449.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/dashboard" for 172.22.0.1 at 2018-05-27 14:04:12 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::DashboardsController#index as */*
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 172.22.0.1 at 2018-05-27 14:04:12 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as */*
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 460ms (Views: 458.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/dashboard" for 172.22.0.1 at 2018-05-27 14:04:27 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::DashboardsController#index as */*
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 172.22.0.1 at 2018-05-27 14:04:27 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as */*
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 400ms (Views: 398.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/edit" for 172.22.0.1 at 2018-05-27 14:04:39 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 364ms (Views: 355.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 172.22.0.1 at 2018-05-27 14:04:41 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 351ms (Views: 306.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/dashboard" for 172.22.0.1 at 2018-05-27 14:08:55 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::DashboardsController#index as */*
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 172.22.0.1 at 2018-05-27 14:08:55 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as */*
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (23.3ms)
+Completed 200 OK in 1107ms (Views: 1105.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.22.0.1 at 2018-05-27 14:17:44 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 172.22.0.1 at 2018-05-27 14:17:45 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (33.9ms)
+Completed 200 OK in 819ms (Views: 817.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 172.22.0.1 at 2018-05-27 14:17:52 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"O0ags4oHSEszMJN1AvrGwfH7k9ByL5VDDRzXw96DNsxeGlSd2QXD6wOf4cWDUL3fh7UezG3dZDBL5zynypEcDw==", "user"=>{"email"=>"example@example.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "example@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.3ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", "2018-05-27 14:17:52.423592"], ["last_sign_in_at", "2018-05-27 14:02:33.128515"], ["sign_in_count", 3], ["updated_at", "2018-05-27 14:17:52.427030"], ["id", 2]]
+  [1m[35m (32.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 302ms (ActiveRecord: 35.8ms)
+
+
+Started GET "/" for 172.22.0.1 at 2018-05-27 14:17:52 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 606ms (Views: 514.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/v1/dashboard" for 172.22.0.1 at 2018-05-27 14:18:22 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::DashboardsController#index as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."category_id" IN ($1, $2, $3, $4)[0m  [["category_id", 1], ["category_id", 2], ["category_id", 3], ["category_id", 4]]
+  [1m[36mSerie Load (0.6ms)[0m  [1m[34mSELECT "series".* FROM "series" WHERE "series"."category_id" IN ($1, $2, $3, $4)[0m  [["category_id", 1], ["category_id", 2], ["category_id", 3], ["category_id", 4]]
+  [1m[35m (14.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 1], ["reviewable_type", "Movie"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 2], ["reviewable_type", "Movie"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 3], ["reviewable_type", "Movie"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 4], ["reviewable_type", "Movie"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 5], ["reviewable_type", "Movie"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 6], ["reviewable_type", "Movie"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 7], ["reviewable_type", "Movie"]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 8], ["reviewable_type", "Movie"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 9], ["reviewable_type", "Movie"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 10], ["reviewable_type", "Movie"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 1], ["reviewable_type", "Serie"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" WHERE "movies"."serie_id" = $1 ORDER BY "movies"."episode_number" ASC[0m  [["serie_id", 1]]
+Completed 200 OK in 574ms (Views: 409.1ms | ActiveRecord: 36.7ms)
+
+
+Started GET "/api/v1/dashboard" for 172.22.0.1 at 2018-05-27 14:21:35 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::DashboardsController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."category_id" IN ($1, $2, $3, $4)[0m  [["category_id", 1], ["category_id", 2], ["category_id", 3], ["category_id", 4]]
+  [1m[36mSerie Load (0.5ms)[0m  [1m[34mSELECT "series".* FROM "series" WHERE "series"."category_id" IN ($1, $2, $3, $4)[0m  [["category_id", 1], ["category_id", 2], ["category_id", 3], ["category_id", 4]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 1], ["reviewable_type", "Movie"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 2], ["reviewable_type", "Movie"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 3], ["reviewable_type", "Movie"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 4], ["reviewable_type", "Movie"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 5], ["reviewable_type", "Movie"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 6], ["reviewable_type", "Movie"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 7], ["reviewable_type", "Movie"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 8], ["reviewable_type", "Movie"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 9], ["reviewable_type", "Movie"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 10], ["reviewable_type", "Movie"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 1], ["reviewable_type", "Serie"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" WHERE "movies"."serie_id" = $1 ORDER BY "movies"."episode_number" ASC[0m  [["serie_id", 1]]
+Completed 200 OK in 93ms (Views: 81.1ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/api/v1/dashboard?type=keep_watching" for 172.22.0.1 at 2018-05-27 14:21:46 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::DashboardsController#index as */*
+  Parameters: {"type"=>"keep_watching"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlayer Load (2.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."end_date" IS NULL AND "players"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" IN ($1, $2, $3, $4, $5)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4], ["id", 6]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 1], ["reviewable_type", "Movie"]]
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 2], ["reviewable_type", "Movie"]]
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 3], ["reviewable_type", "Movie"]]
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 4], ["reviewable_type", "Movie"]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 6], ["reviewable_type", "Movie"]]
+Completed 200 OK in 154ms (Views: 57.5ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/api/v1/movies/" for 172.22.0.1 at 2018-05-27 14:21:53 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/movies"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/movies/1" for 172.22.0.1 at 2018-05-27 14:22:01 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::MoviesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 1], ["reviewable_type", "Movie"]]
+  [1m[36mFavorite Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."favoritable_type" = $2 AND "favorites"."favoritable_id" = $3 LIMIT $4[0m  [["user_id", 2], ["favoritable_type", "Movie"], ["favoritable_id", 1], ["LIMIT", 1]]
+Completed 200 OK in 97ms (Views: 0.2ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/api/v1/movies/" for 172.22.0.1 at 2018-05-27 14:22:08 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/movies"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/movies/1" for 172.22.0.1 at 2018-05-27 14:22:13 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::MoviesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMovie Load (1.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 1], ["reviewable_type", "Movie"]]
+  [1m[36mFavorite Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."favoritable_type" = $2 AND "favorites"."favoritable_id" = $3 LIMIT $4[0m  [["user_id", 2], ["favoritable_type", "Movie"], ["favoritable_id", 1], ["LIMIT", 1]]
+Completed 200 OK in 21ms (Views: 0.2ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/api/v1/movies" for 172.22.0.1 at 2018-05-27 14:23:20 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/movies"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/movies/2" for 172.22.0.1 at 2018-05-27 14:23:26 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::MoviesController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 2], ["reviewable_type", "Movie"]]
+  [1m[36mFavorite Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."favoritable_type" = $2 AND "favorites"."favoritable_id" = $3 LIMIT $4[0m  [["user_id", 2], ["favoritable_type", "Movie"], ["favoritable_id", 2], ["LIMIT", 1]]
+Completed 200 OK in 16ms (Views: 0.1ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/api/v1/movies//executions" for 172.22.0.1 at 2018-05-27 14:24:59 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::MoviesController#show as */*
+  Parameters: {"id"=>"executions"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 8ms (ActiveRecord: 1.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Movie with 'id'=executions):
+  
+app/controllers/api/v1/movies_controller.rb:3:in `show'
+Started GET "/api/v1/movies/1/executions" for 172.22.0.1 at 2018-05-27 14:25:09 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ExecutionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayer Load (0.8ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."movie_id" = $1 AND "players"."end_date" IS NULL AND "players"."user_id" = $2 LIMIT $3[0m  [["movie_id", 1], ["user_id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 2.1ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/api/v1/executions_controller.rb:8:in `new'
+app/controllers/api/v1/executions_controller.rb:8:in `show'
+Started GET "/" for 172.22.0.1 at 2018-05-27 14:29:12 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 1793ms (Views: 1681.4ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/api/v1/movies/1/executions" for 172.22.0.1 at 2018-05-27 14:29:18 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ExecutionsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMovie Load (2.0ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayer Load (1.0ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."movie_id" = $1 AND "players"."end_date" IS NULL AND "players"."user_id" = $2 LIMIT $3[0m  [["movie_id", 1], ["user_id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 1], ["reviewable_type", "Movie"]]
+Completed 200 OK in 803ms (Views: 0.2ms | ActiveRecord: 16.8ms)
+
+
+Started GET "/api/v1/reviews?id=2&type=movie" for 172.22.0.1 at 2018-05-27 14:30:32 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ReviewsController#index as */*
+  Parameters: {"id"=>"2", "type"=>"movie"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 2], ["reviewable_type", "Movie"]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 124ms (Views: 0.2ms | ActiveRecord: 6.1ms)
+
+

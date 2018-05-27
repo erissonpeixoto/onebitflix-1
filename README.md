@@ -16,4 +16,8 @@ Fora acrescido ao projeto original o **Docker**
 
 `rails db:migrate DB_HOST=localhost`
 
+## Para adicionar os dados fakes (ver db/seeds.rb) ao banco de dados
+
+`rails ​db:​seed`
+
 ***GOD** is good*

@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem "aws-sdk-s3"
+
 # Autenticação
 gem 'devise'
 # Serialização do Json
