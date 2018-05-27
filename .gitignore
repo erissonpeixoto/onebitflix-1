@@ -107,3 +107,8 @@ build-iPhoneSimulator/
 # End of https://www.gitignore.io/api/ruby,rails,visualstudiocode
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+/public/packs
+/public/packs-test
+/node_modules
+yarn-debug.log*
+.yarn-integrity
