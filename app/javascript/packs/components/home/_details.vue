@@ -3,11 +3,13 @@
     <v-flex md4 mb-3 mt-2 offset-md1 xs10 offset-xs1>
       <v-layout row wrap>
         <v-flex md12>
-          <h4 class="subtitle white--text" v-if="watchable.type == 'serie'">10 Episódios</h4>
+          <h4 class="subtitle white--text" v-if="watchable.type == 'serie'">
+            {{ watchable.relationships.episodes.data.length }} Episódios
+          </h4>
         </v-flex>
       </v-layout>
       <v-layout row wrap mt-3>
-        <v-flex md4 sm4>
+        <v-flex md3 sm3>
           <v-chip label dark>
             <v-icon left>label</v-icon>{{watchable.attributes.category}}
           </v-chip>
@@ -18,7 +20,7 @@
         </v-flex>
       </v-layout>
       <v-layout row wrap mt-4>
-        <v-flex sm4 md4>
+        <v-flex sm3 md3>
           <v-btn color="red"
                  text-color="white"
                  large
@@ -26,7 +28,7 @@
                  :to="'/watch/'+ watchable.id" >Assistir
           </v-btn>
         </v-flex>
-        <v-flex sm4 md4>
+        <v-flex sm3 md4>
           <v-btn color="black" class="watch-btn white--text" large>+ Minha Lista</v-btn>
         </v-flex>
       </v-layout>
