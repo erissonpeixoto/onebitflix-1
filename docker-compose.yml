@@ -11,6 +11,7 @@ services:
       - 'db'
     build: .
     ports:
+      - '3035:3035'
       - '5000:5000'
     command: 'foreman start'
     volumes:
