@@ -114,3 +114,4 @@ yarn-debug.log*
 .yarn-integrity
 /log
 /.sonarlint
+log/development.log
