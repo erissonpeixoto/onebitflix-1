@@ -3013,3 +3013,75 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 48809ms (Views: 48569.9ms | ActiveRecord: 117.0ms)
 
 
+Started GET "/" for 172.22.0.1 at 2018-05-28 13:04:12 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 36ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 172.22.0.1 at 2018-05-28 13:04:13 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (90.9ms)
+Started GET "/users/sign_in" for 172.22.0.1 at 2018-05-28 13:04:16 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (24.2ms)
+Completed 200 OK in 52100ms (Views: 52056.3ms | ActiveRecord: 5.4ms)
+
+
+Completed 200 OK in 49881ms (Views: 49879.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 172.22.0.1 at 2018-05-28 13:05:36 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QIXdKA+MtGutg7CA3qMBsM4IJH46CBO9Ko+iaKurtMrDAcGnud3bdTTbiADNZRnRyAr3N3bExubVfSEy/kU5hQ==", "user"=>{"email"=>"example@example.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "example@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (22.2ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", "2018-05-28 13:05:36.855207"], ["last_sign_in_at", "2018-05-28 12:09:23.809478"], ["sign_in_count", 7], ["updated_at", "2018-05-28 13:05:36.861114"], ["id", 1]]
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:5000/
+Completed 302 Found in 604ms (ActiveRecord: 28.5ms)
+
+
+Started GET "/" for 172.22.0.1 at 2018-05-28 13:05:36 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 482ms (Views: 446.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/dashboard?type=highlight" for 172.22.0.1 at 2018-05-28 13:05:38 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::DashboardsController#index as JSON
+  Parameters: {"type"=>"highlight"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Load (141.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."highlighted" = $1 LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mFavorite Exists (53.6ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."favoritable_type" = $2 AND "favorites"."favoritable_id" = $3 LIMIT $4[0m  [["user_id", 1], ["favoritable_type", "Movie"], ["favoritable_id", 1], ["LIMIT", 1]]
+Completed 200 OK in 671ms (Views: 235.5ms | ActiveRecord: 214.2ms)
+
+
+Started GET "/__open-in-editor?file=node_modules/vue-slick/slickCarousel.vue" for 172.22.0.1 at 2018-05-28 13:07:26 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as */*
+  Parameters: {"file"=>"node_modules/vue-slick/slickCarousel.vue", "path"=>"__open-in-editor"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 172.22.0.1 at 2018-05-28 13:07:26 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as */*
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (46.1ms)
+Completed 200 OK in 2122ms (Views: 2120.0ms | ActiveRecord: 0.0ms)
+
+
