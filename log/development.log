@@ -3883,3 +3883,210 @@ Processing by Api::V1::MoviesController#show as JSON
 Completed 200 OK in 16ms (Views: 0.1ms | ActiveRecord: 3.4ms)
 
 
+Started GET "/" for 172.22.0.1 at 2018-05-28 15:16:13 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 652ms (Views: 605.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/v1/dashboard?type=category" for 172.22.0.1 at 2018-05-28 15:16:15 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/api/v1/dashboard?type=highlight" for 172.22.0.1 at 2018-05-28 15:16:15 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/api/v1/dashboard?type=keep_watching" for 172.22.0.1 at 2018-05-28 15:16:15 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::DashboardsController#index as JSON
+  Parameters: {"type"=>"category"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (2.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Processing by Api::V1::DashboardsController#index as JSON
+  Parameters: {"type"=>"highlight"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."highlighted" = $1 LIMIT $2[0m  [["highlighted", true], ["LIMIT", 1]]
+  [1m[36mMovie Load (1.9ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."category_id" IN ($1, $2, $3, $4)[0m  [["category_id", 1], ["category_id", 2], ["category_id", 3], ["category_id", 4]]
+  [1m[36mFavorite Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."favoritable_type" = $2 AND "favorites"."favoritable_id" = $3 LIMIT $4[0m  [["user_id", 1], ["favoritable_type", "Movie"], ["favoritable_id", 1], ["LIMIT", 1]]
+  [1m[36mSerie Load (2.1ms)[0m  [1m[34mSELECT "series".* FROM "series" WHERE "series"."category_id" IN ($1, $2, $3, $4)[0m  [["category_id", 1], ["category_id", 2], ["category_id", 3], ["category_id", 4]]
+Processing by Api::V1::DashboardsController#index as JSON
+  Parameters: {"type"=>"keep_watching"}
+  [1m[35m (4.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 1], ["reviewable_type", "Movie"]]
+  [1m[36mUser Load (14.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 25ms (Views: 15.4ms | ActiveRecord: 3.7ms)
+
+
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 2], ["reviewable_type", "Movie"]]
+  [1m[36mPlayer Load (16.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."end_date" IS NULL AND "players"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 3], ["reviewable_type", "Movie"]]
+  [1m[36mMovie Load (15.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" IN ($1, $2, $3, $4, $5)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4], ["id", 6]]
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 4], ["reviewable_type", "Movie"]]
+  [1m[36mCategory Load (8.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 5], ["reviewable_type", "Movie"]]
+  [1m[35m (10.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 1], ["reviewable_type", "Movie"]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 6], ["reviewable_type", "Movie"]]
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 7], ["reviewable_type", "Movie"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 2], ["reviewable_type", "Movie"]]
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (4.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 8], ["reviewable_type", "Movie"]]
+  [1m[35m (6.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 3], ["reviewable_type", "Movie"]]
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 4], ["reviewable_type", "Movie"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 9], ["reviewable_type", "Movie"]]
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 10], ["reviewable_type", "Movie"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 6], ["reviewable_type", "Movie"]]
+Completed 200 OK in 163ms (Views: 77.9ms | ActiveRecord: 74.4ms)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 1], ["reviewable_type", "Serie"]]
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" WHERE "movies"."serie_id" = $1 ORDER BY "movies"."episode_number" ASC[0m  [["serie_id", 1]]
+Completed 200 OK in 238ms (Views: 195.2ms | ActiveRecord: 34.0ms)
+
+
+Started GET "/api/v1/reviews?id=2&type=movie" for 172.22.0.1 at 2018-05-28 15:16:21 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/api/v1/movies/2" for 172.22.0.1 at 2018-05-28 15:16:21 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::MoviesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by Api::V1::ReviewsController#index as JSON
+  Parameters: {"id"=>"2", "type"=>"movie"}
+  [1m[36mMovie Load (2.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 2], ["reviewable_type", "Movie"]]
+  [1m[36mFavorite Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."favoritable_type" = $2 AND "favorites"."favoritable_id" = $3 LIMIT $4[0m  [["user_id", 1], ["favoritable_type", "Movie"], ["favoritable_id", 2], ["LIMIT", 1]]
+Completed 200 OK in 76ms (Views: 0.1ms | ActiveRecord: 60.0ms)
+
+
+  [1m[36mReview Load (1.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 2], ["reviewable_type", "Movie"]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 226ms (Views: 0.2ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/api/v1/reviews?id=2&type=movie" for 172.22.0.1 at 2018-05-28 15:16:31 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/api/v1/movies/2" for 172.22.0.1 at 2018-05-28 15:16:31 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ReviewsController#index as JSON
+  Parameters: {"id"=>"2", "type"=>"movie"}
+Processing by Api::V1::MoviesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (1.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 2], ["reviewable_type", "Movie"]]
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 2], ["reviewable_type", "Movie"]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFavorite Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."favoritable_type" = $2 AND "favorites"."favoritable_id" = $3 LIMIT $4[0m  [["user_id", 1], ["favoritable_type", "Movie"], ["favoritable_id", 2], ["LIMIT", 1]]
+Completed 200 OK in 25ms (Views: 0.1ms | ActiveRecord: 7.9ms)
+
+
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 35ms (Views: 0.2ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/api/v1/reviews?id=7&type=movie" for 172.22.0.1 at 2018-05-28 15:16:37 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/api/v1/movies/7" for 172.22.0.1 at 2018-05-28 15:16:37 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ReviewsController#index as JSON
+  Parameters: {"id"=>"7", "type"=>"movie"}
+Processing by Api::V1::MoviesController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 7], ["reviewable_type", "Movie"]]
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 1.6ms)
+
+
+  [1m[36mMovie Load (1.7ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 7], ["reviewable_type", "Movie"]]
+  [1m[36mFavorite Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."favoritable_type" = $2 AND "favorites"."favoritable_id" = $3 LIMIT $4[0m  [["user_id", 1], ["favoritable_type", "Movie"], ["favoritable_id", 7], ["LIMIT", 1]]
+Completed 200 OK in 24ms (Views: 0.2ms | ActiveRecord: 7.2ms)
+
+
+Started POST "/api/v1/reviews" for 172.22.0.1 at 2018-05-28 15:16:51 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ReviewsController#create as JSON
+  Parameters: {"review"=>{"reviewable_id"=>7, "reviewable_type"=>"Movie", "description"=>"Hi", "rating"=>0}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Load (1.6ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = $1 AND "reviews"."reviewable_type" = $2 AND "reviews"."reviewable_id" = $3 LIMIT $4[0m  [["user_id", 1], ["reviewable_type", "Movie"], ["reviewable_id", 7], ["LIMIT", 1]]
+  [1m[35m (15.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 65ms (Views: 0.4ms | ActiveRecord: 18.4ms)
+
+
+Started POST "/api/v1/reviews" for 172.22.0.1 at 2018-05-28 15:17:15 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ReviewsController#create as JSON
+  Parameters: {"review"=>{"reviewable_id"=>7, "reviewable_type"=>"Movie", "description"=>"Deixe seu opiniãoDeixe seu opiniãoDeixe seu opiniãoDeixe seu opiniãoDeixe seu opiniãoDeixe seu opiniãoDeixe seu opiniãoDeixe seu opiniãoDeixe seu opiniãoDeixe seu opinião", "rating"=>2}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = $1 AND "reviews"."reviewable_type" = $2 AND "reviews"."reviewable_id" = $3 LIMIT $4[0m  [["user_id", 1], ["reviewable_type", "Movie"], ["reviewable_id", 7], ["LIMIT", 1]]
+  [1m[36mReview Create (95.1ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "description", "reviewable_type", "reviewable_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["rating", 2], ["description", "Deixe seu opiniãoDeixe seu opiniãoDeixe seu opiniãoDeixe seu opiniãoDeixe seu opiniãoDeixe seu opiniãoDeixe seu opiniãoDeixe seu opiniãoDeixe seu opiniãoDeixe seu opinião"], ["reviewable_type", "Movie"], ["reviewable_id", 7], ["user_id", 1], ["created_at", "2018-05-28 15:17:15.265772"], ["updated_at", "2018-05-28 15:17:15.265772"]]
+  [1m[35m (17.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 130ms (Views: 1.2ms | ActiveRecord: 115.6ms)
+
+
+Started GET "/api/v1/movies/3" for 172.22.0.1 at 2018-05-28 15:17:32 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/api/v1/reviews?id=3&type=movie" for 172.22.0.1 at 2018-05-28 15:17:32 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::MoviesController#show as JSON
+  Parameters: {"id"=>"3"}
+Processing by Api::V1::ReviewsController#index as JSON
+  Parameters: {"id"=>"3", "type"=>"movie"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (2.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 3], ["reviewable_type", "Movie"]]
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 2.8ms)
+
+
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 3], ["reviewable_type", "Movie"]]
+  [1m[36mFavorite Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."favoritable_type" = $2 AND "favorites"."favoritable_id" = $3 LIMIT $4[0m  [["user_id", 1], ["favoritable_type", "Movie"], ["favoritable_id", 3], ["LIMIT", 1]]
+Completed 200 OK in 24ms (Views: 0.1ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/api/v1/movies/2" for 172.22.0.1 at 2018-05-28 15:17:36 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/api/v1/reviews?id=2&type=movie" for 172.22.0.1 at 2018-05-28 15:17:36 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ReviewsController#index as JSON
+  Parameters: {"id"=>"2", "type"=>"movie"}
+Processing by Api::V1::MoviesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 2], ["reviewable_type", "Movie"]]
+  [1m[36mMovie Load (2.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCategory Load (1.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."reviewable_id" = $1 AND "reviews"."reviewable_type" = $2[0m  [["reviewable_id", 2], ["reviewable_type", "Movie"]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFavorite Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."favoritable_type" = $2 AND "favorites"."favoritable_id" = $3 LIMIT $4[0m  [["user_id", 1], ["favoritable_type", "Movie"], ["favoritable_id", 2], ["LIMIT", 1]]
+Completed 200 OK in 25ms (Views: 0.2ms | ActiveRecord: 11.0ms)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 36ms (Views: 0.2ms | ActiveRecord: 4.9ms)
+
+
